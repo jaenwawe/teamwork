@@ -1,8 +1,10 @@
+
+
 puts "Seed Users"
 
 jil = User.create!(
     username: "ologn",
-    password_digest: "123abc",
+    password: "123abc",
     email: "candy@candy.com",
     first_name: "candy",
     avatar_url: "https://bit.ly/326tkhU",
@@ -12,7 +14,7 @@ jil = User.create!(
 
 candy = User.create!(
     username: "nsquared",
-    password_digest: "123abc",
+    password: "123abc",
     email: "candy@gmail.com",
     first_name: "Candy",
     avatar_url: "https://bit.ly/3EVQ8j4",
@@ -22,7 +24,7 @@ candy = User.create!(
 
 pop = User.create!(
     username: "popsickle",
-    password_digest: "123abc",
+    password: "123abc",
     email: "pop@gmail.com",
     first_name: "Judeo",
     avatar_url: "https://bitly.com/3DZdIdm",

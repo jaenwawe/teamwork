@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 
-import Hello from './Home'
+import Home from './Home'
 
 function App() {
   const [count, setCount] = useState(0);
@@ -45,10 +45,10 @@ function App() {
           <BrowserRouter>
             <Switch>
               <Route exact path="/">
-                <Hello/> 
+                <Home/> 
               </Route> 
-              <Route exact path="/login">
-                <Hello/> 
+              <Route path="/login">
+                <Home/> 
               </Route>
           </Switch>
           </BrowserRouter> 

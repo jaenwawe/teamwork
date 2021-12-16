@@ -5,11 +5,19 @@ one:
   password_digest: MyString
   email: MyString
   bio: MyString
-  avatar: MyString
+  avatar_url: MyString
 
 two:
   username: MyString
   password_digest: MyString
   email: MyString
   bio: MyString
-  avatar: MyString
+  avatar_url: MyString
+
+  three:
+  username: MyString
+  password_digest: MyString
+  email: MyString
+  bio: MyString
+  avatar_url: MyString
+
