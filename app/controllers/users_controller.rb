@@ -48,7 +48,7 @@ class UsersController < ApplicationController
     end
   
     def authorize_user
-      user_can_modify = current_user.admin? || @event.user == current_user
+      @event.user == current_user
       if !user_can_modify
         render json: { error: "You don't have permission to perform that action" }, status: :forbidden
       end

@@ -1,11 +1,26 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { increaseVote, decreaseVote } from "../redux/actions/challengeActions.js"
+import { useSelector } from "react-redux";
 
 
-import Home from './Home'
+import Login from './Login'
+import ChallengeArr from './ChallengeArr'
+import {Logout} from './Logout'
+
+
 
 function App() {
-  const [count, setCount] = useState(0);
+
+
+ const challenge = {
+        votes: 110,
+        id:1,
+        title: "hello",
+        question: "",
+        photo_url: ""
+      }
+
   const [currentUser, setCurrentUser] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('')
@@ -41,18 +56,15 @@ function App() {
   return (
 
     <div className="App">
-        <h1>Page Count: {count}</h1>
+        <h1>Votes {challenge.votes}</h1>
           <BrowserRouter>
             <Switch>
-              <Route exact path="/">
-                <Home/> 
-              </Route> 
-              <Route path="/login">
-                <Home/> 
-              </Route>
+            <Route path="/login"><Login/>  </Route>
+            <Route exact path="/"><Login /> </Route> 
+            <Route path="/challenges"> <ChallengeArr/> </Route>
+            <Route path="/challenges"><ChallengeArr/></Route>
           </Switch>
-          </BrowserRouter> 
-        
+        </BrowserRouter> 
     </div>
   );
 }
