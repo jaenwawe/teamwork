@@ -1,4 +1,4 @@
-const SET_USERNAME = "SET_USERNAME"
+import { SET_USER } from "../actionTypes";
 const initialUsersState = {
   allUsers: [],
 };
@@ -6,11 +6,11 @@ const initialUsersState = {
 export function usersReducer(state = initialUsersState, action) {
   console.log(action);
   switch (action.type) {
-    case SET_USERNAME:
+    case SET_USER:
+      console.log(SET_USER);
       return {
         ...state,
-        [action.payload]: {...[action.payload]},
-        username: state[action.payload].username };
+        user: action.payload };
     default:
       return state;
   }

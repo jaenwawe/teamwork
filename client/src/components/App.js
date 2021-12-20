@@ -1,72 +1,17 @@
-import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { increaseVote, decreaseVote } from "../redux/actions/challengeActions.js"
-import { useSelector } from "react-redux";
-
-
 import Login from './Login'
-import ChallengeArr from './ChallengeArr'
-import {Logout} from './Logout'
 
-
-
-function App() {
-
-
- const challenge = {
-        votes: 110,
-        id:1,
-        title: "hello",
-        question: "",
-        photo_url: ""
-      }
-
-  const [currentUser, setCurrentUser] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('')
-  const [first_name, setFirstName] = useState('');
-  const [last_name, setLastName] = useState("");
-  const [username, setUsername] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(!! currentUser)
-
-
-  const handleLogin = (event) => {
-    event.preventDefault()
-    
-    fetch('/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({email, password})
-    })
-      .then(res => {
-        if (res.ok) {
-          res.json()
-          .then =(setIsLoggedIn(true))
-          } else {
-          res.json().then(errors => {
-            console.error(errors)
-          })
-        }
-      })
-  }
-
-
+function App(){
   return (
+  
+    <BrowserRouter>
+    <Switch>
+    <Route exact path="/"><Login /> </Route> 
+    <Route path="/login"><Login/>  </Route>
+  </Switch>
+</BrowserRouter> 
+  
+    )
 
-    <div className="App">
-        <h1>Votes {challenge.votes}</h1>
-          <BrowserRouter>
-            <Switch>
-            <Route path="/login"><Login/>  </Route>
-            <Route exact path="/"><Login /> </Route> 
-            <Route path="/challenges"> <ChallengeArr/> </Route>
-            <Route path="/challenges"><ChallengeArr/></Route>
-          </Switch>
-        </BrowserRouter> 
-    </div>
-  );
 }
-
 export default App;

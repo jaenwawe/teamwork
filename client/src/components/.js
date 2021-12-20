@@ -6,3 +6,16 @@ function Home(){
 
 }
 export default Home 
+
+
+
+
+
+
+
+function Main(){
+    return (<div>
+    </div>)
+
+}
+export default Main;

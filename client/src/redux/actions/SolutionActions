@@ -1,0 +1,31 @@
+export function addSolutions(event) {
+  return (dispatch) => {
+
+      event.preventDefault()
+      fetch('/newSolution', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+         "user_id" : null,
+         "challenge_id": null,
+         "photo_url": "",
+         "explaination": "",
+         "hints":"",
+         "questions":""
+       })
+      })
+        .then(res => {
+          if (res.ok) {
+          res.json().then(solution => {
+            ...state,
+            [action.payload]: {
+              ...state[action.payload],
+              history.push("/")
+          })
+          } else {
+            res.json().then(errors => {console.error(errors)})
+            }
+        })
+      }

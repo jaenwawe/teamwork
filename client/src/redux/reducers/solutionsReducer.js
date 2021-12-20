@@ -12,20 +12,20 @@ const initialSolutionsState = {
 export function solutionsReducer(state = initialSolutionsState, action) {
 console.log(action);
   switch (action.type) {
-    case "INCREASE_VOTE":
+    case "LOADING_SOLUTIONS":
       return {
         ...state,
         [action.payload]: {
           ...state[action.payload],
-          votes: state[action.payload].votes + 1,
+          solutions: state[action.payload].solutions,
         },
 };
-    case "DECREASE_VOTE":
+    case "SET_SOLUTIONS":
       return {
         ...state,
         [action.payload]: {
           ...state[action.payload],
-          votes: state[action.payload].votes - 1,
+          solutions: state[action.payload].solutions,
         },
       };
     default:

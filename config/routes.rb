@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   post "/login", to: "sessions#create"
+  # get "/login", to: "sessions#create"
   delete "/logout/:id", to: "sessions#destroy"
   
   

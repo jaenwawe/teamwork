@@ -1,8 +1,6 @@
 import ReactDOM from 'react-dom';
 import { SET_CHALLENGES } from "../actionTypes";
-// const initialChallengesState = {
-//   allChallenges: [],
-// };
+
 
 const initialChallengesState = {
   1: {

@@ -1,8 +1,23 @@
+export const INCREASE_VOTE = "INCREASE_VOTE";  
+export const DECREASE_VOTE  = "DECREASE_VOTE";
 
-   
-export const INCREASE_VOTE = "INCREASE_VOTE";   
 
-export const SET_CHARACTERS = "SET_CHARACTERS";
+
+export const LOADING_CHALLENGES = "LOADING_CHALLENGES";  
 export const SET_CHALLENGES  = "SET_CHALLENGES";
+
+
+export const LOADING_SOLUTIONS = "LOADING_SOLUTIONS ";  
+export const SET_SOLUTIONS = "SET_SOLUTIONS";
+
+
+export const SET_USER = "SET_USER"
+export const LOADING_USER = "LOADING_USER"
+
+
+
+
+
+
 
 
