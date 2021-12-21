@@ -8,6 +8,7 @@ jil = User.create!(
     email: "candy@candy.com",
     first_name: "candy",
     avatar_url: "https://bit.ly/326tkhU",
+    logged_in: true,
     bio: "Super Nerd, runs O N(LogN) speed, and eats at O(1) speed.  Let's get started!"
 )
 
@@ -17,6 +18,7 @@ candy = User.create!(
     password: "123abc",
     email: "candy@gmail.com",
     first_name: "Candy",
+    logged_in: true,
     avatar_url: "https://bit.ly/3EVQ8j4",
     bio: "Super Nerd, runs O N(LogN) speed, and eats at O(1) speed.  Let's get started!"
 )
@@ -26,6 +28,7 @@ pop = User.create!(
     username: "popsickle",
     password: "123abc",
     email: "pop@gmail.com",
+    logged_in: true,
     first_name: "Judeo",
     avatar_url: "https://bitly.com/3DZdIdm",
     bio: "Geek squad , types, naps, listens to pop music.  I'm ready!"

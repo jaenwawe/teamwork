@@ -1,6 +1,6 @@
 import { SET_USER } from "../actionTypes";
 const initialUsersState = {
-  allUsers: [],
+logged_in: false,
 };
 
 export function usersReducer(state = initialUsersState, action) {

@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
-import Solution from "../Solution";
-
+import Solution from "./Solution";
 
 
 function SolutionsContainer(){

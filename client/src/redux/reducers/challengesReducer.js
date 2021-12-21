@@ -4,7 +4,7 @@ import { SET_CHALLENGES } from "../actionTypes";
 
 const initialChallengesState = {
   1: {
-  votes: 110,
+  votes: 0,
   id:1,
   title: "hello",
   question: "",

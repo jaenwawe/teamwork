@@ -1,45 +1,48 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
+
 import { increaseVote, decreaseVote } from "/Users/jaenwawe/alpha/teamwork/client/src/redux/actions/challengeActions"
 
-const Challenge = ({ challenge }) => {
-  const dispatch = useDispatch();
-  return (
-    <div className="card">
-      <h2>Name: {challenge.title}</h2>
-      <h2>{challenge.question}</h2>
-          <img src={challenge.image_url} alt={challenge.title}></img>
-      <p>Votes: {challenge.votes}</p>
-  
-      <br />
-      <button
-        onClick={() => {
-          dispatch(increaseVote(challenge.id))
-        }}>UpVote </button>
 
+
+function Challenge ({challenge}){
+    const dispatch = useDispatch();
+    return (
+      <div className="card">
+        <h2>Name: {challenge.title}</h2>
+        <h2>{challenge.question}</h2>
+            <img src={challenge.image_url} alt={challenge.title}></img>
+        <p>Votes: {challenge.votes}</p>
+    
+        <br />
         <button
-        onClick={() => {
-        dispatch({type: "INCREASE_VOTE", payload: challenge.id} )}}> UpVote
+          onClick={() => {
+            dispatch(increaseVote(challenge.id))
+          }}>UpVote </button>
+
+          <button
+          onClick={() => {
+          dispatch({type: "INCREASE_VOTE", payload: challenge.id} )}}> UpVote
+          </button>
+
+      
+        <button
+          onClick={() => {
+          dispatch({type: "DECREASE_VOTE", payload: challenge.id} )}}>
+              Down Vote
+          </button>
+      
+        <button
+          onClick={() => {
+            dispatch(decreaseVote(challenge.id));
+          }}> 
+          Down Vote
         </button>
 
-    
-      <button
-        onClick={() => {
-        dispatch({type: "DECREASE_VOTE", payload: challenge.id} )}}>
-            Down Vote
-        </button>
-    
-      <button
-        onClick={() => {
-          dispatch(decreaseVote(challenge.id));
-        }}> 
-        Down Vote
-      </button>
 
-
-    </div>
-  );
+      </div>
+    );
 };
 
-export default Challenge;
+export default Challenge
