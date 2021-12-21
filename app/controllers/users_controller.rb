@@ -1,23 +1,14 @@
 class UsersController < ApplicationController
-  before_action :set_user, except: [:index, :create]
+  before_action :set_user, except: [:create]
 
 
 
 
-  def index    
-    render json: User.all, each_serializer: UserSerializer  
-  end
+  # def index    
+  #   render json: User.all, each_serializer: UserSerializer  
+  # end
 
 
-   def show
-    if current_user
-          render json: current_user, status: :ok
-        else
-          render json: { error: 'No active session' }, status: :unauthorized
-        end
-      end
-   
-      
       def show
         if current_user
           render json: current_user, status: :ok
@@ -28,8 +19,8 @@ class UsersController < ApplicationController
 
 
       def create
-        user = User.new(user_params)
-        if user.save
+        # user = User.new(user_params)
+          user = User.create!(user_params)
           session[:user_id] = user.id
           render json: user, status: :created
         else

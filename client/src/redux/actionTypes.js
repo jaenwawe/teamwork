@@ -11,8 +11,16 @@ export const LOADING_SOLUTIONS = "LOADING_SOLUTIONS ";
 export const SET_SOLUTIONS = "SET_SOLUTIONS";
 
 
+export const LOADING_SOLUTION = "LOADING_SOLUTION ";  
+export const SET_SOLUTION= "SET_SOLUTION";
+
+
 export const SET_USER = "SET_USER"
 export const LOADING_USER = "LOADING_USER"
+
+
+export const CURRENT_USER = "CURRENT_USER"
+
 
 
 

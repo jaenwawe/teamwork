@@ -1,34 +1,21 @@
+import { SET_SOLUTIONS } from "../actionTypes";
+import { LOADING_SOLUTIONS } from "../actionTypes";
 const initialSolutionsState = {
-  1: {
-    id: 0,
-    title: "",
-    question: "",
-    votes: 0,
-    image_url: "N/A",
-    }
+  solutions: []
 };
 
 
 export function solutionsReducer(state = initialSolutionsState, action) {
-console.log(action);
   switch (action.type) {
-    case "LOADING_SOLUTIONS":
+    case SET_SOLUTIONS:
+          return {
+            ...state,
+            solutions: action.payload }
+    case LOADING_SOLUTIONS:
       return {
         ...state,
-        [action.payload]: {
-          ...state[action.payload],
-          solutions: state[action.payload].solutions,
-        },
-};
-    case "SET_SOLUTIONS":
-      return {
-        ...state,
-        [action.payload]: {
-          ...state[action.payload],
-          solutions: state[action.payload].solutions,
-        },
-      };
+          solutions: action.payload }
     default:
       return state;
-  }
+    }
 }

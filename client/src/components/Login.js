@@ -5,8 +5,10 @@ import ReactDom, { unstable_renderSubtreeIntoContainer } from "react-dom";
 
 import { increaseVote, decreaseVote } from "../redux/actions/challengeActions"
 import { loginCurrentUser} from "../redux/actions/userActions";
+import { getCurrentUserLogin} from "../redux/actions/userActions";
 import { Redirect } from "react-router-dom";
-import {createBrowserHistory} from "history";
+import { createBrowserHistory} from "history";
+import { getSolutions } from "../redux/actions/solutionActions"
 
 
 function Login() {
@@ -17,7 +19,8 @@ function Login() {
   function handleSubmit(e){
     e.preventDefault();
     dispatch(loginCurrentUser(email, password) ) 
-    console.log(username)
+    dispatch(getCurrentUserLogin()) 
+    dispatch(getSolutions()) 
     }
 
 
