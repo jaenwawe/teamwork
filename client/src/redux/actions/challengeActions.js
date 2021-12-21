@@ -1,6 +1,28 @@
 import { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+
+export function getChallenges()
+{ 
+      return (dispatch) => {
+      dispatch({ type: "LOADING_Challenges" })
+        console.log('getChallenges')
+      fetch("/challenges")
+            .then(res => {
+              if (res.ok) { 
+                res.json().then(challenges =>{
+                  dispatch({ type: "SET_Challenges", payload: challenges })
+              })
+             } else {
+              res.json().then(errors => 
+              console.error(errors))
+            }
+        })
+      }
+    }
+
+
+
 export function setChallenges()
 {
 

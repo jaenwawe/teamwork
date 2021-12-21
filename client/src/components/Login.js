@@ -1,9 +1,9 @@
 import React, {useState } from "react";
 import { useSelector, useDispatch} from "react-redux"; 
-import ReactDom, { unstable_renderSubtreeIntoContainer } from "react-dom";
+import ReactDom from "react-dom";
 
 
-import { increaseVote, decreaseVote } from "../redux/actions/challengeActions"
+import { increaseVote, decreaseVote, setChallenges, getChallenges } from "../redux/actions/challengeActions"
 import { loginCurrentUser} from "../redux/actions/userActions";
 import { getCurrentUserLogin} from "../redux/actions/userActions";
 import { Redirect } from "react-router-dom";
@@ -21,6 +21,7 @@ function Login() {
     dispatch(loginCurrentUser(email, password) ) 
     dispatch(getCurrentUserLogin()) 
     dispatch(getSolutions()) 
+    dispatch(setChallenges()) 
     }
 
 
