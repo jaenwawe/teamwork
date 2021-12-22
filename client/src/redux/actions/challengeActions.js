@@ -5,13 +5,13 @@ import { useDispatch, useSelector } from "react-redux";
 export function getChallenges()
 { 
       return (dispatch) => {
-      dispatch({ type: "LOADING_Challenges" })
-        console.log('getChallenges')
+      dispatch({ type: "SET_CHALLENGES" })
+        console.log('getChallenges in challengeActions')
       fetch("/challenges")
             .then(res => {
               if (res.ok) { 
                 res.json().then(challenges =>{
-                  dispatch({ type: "SET_Challenges", payload: challenges })
+                  dispatch({ type: "SET_CHALLENGES", payload: challenges })
               })
              } else {
               res.json().then(errors => 
@@ -33,7 +33,7 @@ export function setChallenges()
           .then(res => {
             if (res.ok) { 
               res.json().then(challenges =>{
-                dispatch({ type: "SET_CHALLNGES", payload:challenges })
+                dispatch({ type: "SET_CHALLENGES", payload:challenges })
             })
            } else {
             res.json().then(errors => 

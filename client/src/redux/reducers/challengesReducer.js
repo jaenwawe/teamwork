@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import { SET_CHALLENGES } from "../actionTypes";
+import { SET_CHALLENGES} from "../actionTypes";
 import { INCREASE_VOTE} from "../actionTypes";
 import { DECREASE_VOTE } from "../actionTypes";
 
@@ -14,7 +14,7 @@ console.log(action);
     case SET_CHALLENGES:
       return {
         ...state,
-        solutions: action.payload }
+        challenges: action.payload }
     
     case "INCREASE_VOTE":
       return {
