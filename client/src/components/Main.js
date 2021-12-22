@@ -1,10 +1,5 @@
-
-
-
-
-
-
-import { useState, useEffect } from "react";
+import React from "react";
+import { useEffect } from "react";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { increaseVote, decreaseVote } from "../redux/actions/challengeActions.js"
 import { useSelector } from "react-redux";

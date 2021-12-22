@@ -1,24 +1,29 @@
 
-import { NavLink, Link} from "react-router-dom";
+import React from 'react';
+import ReactDom from "react-dom";
+import { Link} from "react-router-dom";
 import {useSelector} from "react-redux";
+import {createBrowserHistory} from "history"
+
 
 function NavBar() {
 
-    if
     
-    function handleLinkClick(e) {
-        e.preventDefault()
-        onChangePage(e.target.pathname)
-    }
+    // function handleLinkClick(e) {
+    //     e.preventDefault()
+    //     onChangePage(e.target.pathname)
+    // }
+    
     
     return (
-        <nav>
+        <div>
+            <div>NavBar</div>
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
             <Link to="/addchallenge">Add a Challenge</Link>
             <Link to="/challenges">Challenges</Link>
       
-        </nav>
+        </div>
     );
 }
 

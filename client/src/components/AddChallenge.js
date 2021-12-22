@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDom from "react-dom";
 import { useSelector } from "react-redux";
 import Challenge from "./Challenge";
 

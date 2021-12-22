@@ -10,6 +10,10 @@ import { Redirect } from "react-router-dom";
 import { createBrowserHistory} from "history";
 import { getSolutions } from "../redux/actions/solutionActions"
 
+import ChallengesContainer from "./ChallengesContainer";
+import Challenge from "./Challenge";
+import Home from "./Home";
+
 
 function Login() {
   const dispatch = useDispatch()
@@ -19,9 +23,9 @@ function Login() {
   function handleSubmit(e){
     e.preventDefault();
     dispatch(loginCurrentUser(email, password) ) 
-    dispatch(getCurrentUserLogin()) 
+    // dispatch(getCurrentUserLogin()) 
     dispatch(getSolutions()) 
-    dispatch(setChallenges()) 
+    dispatch(getChallenges()) 
     }
 
 

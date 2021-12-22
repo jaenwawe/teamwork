@@ -1,12 +1,11 @@
+import ReactDom from "react-dom";
 import {Challenge} from "./Challenge"
+import {ChallengeContainer} from "./ChallengesContainer"
 
 
-function EachTitle()
-    {
-        
-    }
-return (
-<div>EachTitle</div>
-)
-
-export default EachTitle;
+export function EachTitle()
+{
+    return (
+    <div>EachTitle</div>            
+    )
+}

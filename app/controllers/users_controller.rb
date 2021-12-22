@@ -1,37 +1,39 @@
 class UsersController < ApplicationController
-  before_action :set_user, except: [:create]
+  before_action :set_user, only: [:index, :show]
 
 
 
 
   def index    
-    render json: User.all, each_serializer: UserSerializer  
+    render json: User.all
   end
 
 
       def show
-        if current_user
-          render json: current_user, status: :ok
-        else
-          render json: { error: 'No active session' }, status: :unauthorized
-        end
+
+        # useEffects in APP persist login   if session cookie  refetch
+          if current_user
+            render json: current_user, status: :ok
+          else
+            render json: { error: 'No active session' }, status: :unauthorized
+          end
       end
 
 
       def create
-        # user = User.new(user_params)
-          user = User.create!(user_params)
-          session[:user_id] = user.id
-          render json: user, status: :created
-        else
-          render json: user.errors, status: :unprocessable_entity
-        end
+        new_user = User.new(user_params)
+        if new_user.save
+          session[:user_id] = new_user.id
+          render json: new_user, status: :created
+        else render json: new_user.error.full_messages,status: :unprocessable_entity
+          end
       end
-
+        
+      
     private
 
     def user_params
-      params.permit(:username, :password, :first_name, :email, :bio, :avatar_url)
+      params.permit(:id,:username, :password, :first_name, :email, :bio, :avatar_url)
     end
   
     def set_user
