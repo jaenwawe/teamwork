@@ -1,14 +1,20 @@
 import React from "react";
 import ReactDom from "react-dom";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch} from "react-redux"; 
 
 
 import { increaseVote, decreaseVote } from "/Users/jaenwawe/alpha/teamwork/client/src/redux/actions/challengeActions"
 
 
 
-function Challenge ({challenge}){
-    const dispatch = useDispatch();
+function Challenge ({key, challenge}){
+    const dispatch = useDispatch()
+    // const challenge = useSelector((state) => 
+    // console.log (state.challenges))
+
+
+
+
     return (
       <div className="card">
         <h2>Name: {challenge.title}</h2>

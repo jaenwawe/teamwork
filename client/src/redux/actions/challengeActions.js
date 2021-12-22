@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 export function getChallenges()
 { 
       return (dispatch) => {
-      dispatch({ type: "SET_CHALLENGES" })
+      // dispatch({ type: "LOADING_CHALLENGES" })
         console.log('getChallenges in challengeActions')
       fetch("/challenges")
             .then(res => {
@@ -20,6 +20,11 @@ export function getChallenges()
         })
       }
     }
+
+
+
+
+
 
 
 

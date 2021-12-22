@@ -4,7 +4,7 @@ import { INCREASE_VOTE} from "../actionTypes";
 import { DECREASE_VOTE } from "../actionTypes";
 
 const initialChallengesState = {
-  solutions: []
+  challenges: []
 };
 
 
@@ -14,7 +14,11 @@ console.log(action);
     case SET_CHALLENGES:
       return {
         ...state,
-        challenges: action.payload }
+        challenges: action.payload}
+    // case SET_CHALLENGES:
+    //   return {
+    //     ...state,
+    //     changes: action.payload}
     
     case "INCREASE_VOTE":
       return {

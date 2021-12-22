@@ -4,11 +4,13 @@ import ReactDom from "react-dom";
 
 
 import { increaseVote, decreaseVote, setChallenges, getChallenges } from "../redux/actions/challengeActions"
+import { getSolutions } from "../redux/actions/solutionActions"
+
 import { loginCurrentUser} from "../redux/actions/userActions";
 import { getCurrentUserLogin} from "../redux/actions/userActions";
 import { Redirect } from "react-router-dom";
 import { createBrowserHistory} from "history";
-import { getSolutions } from "../redux/actions/solutionActions"
+
 
 import ChallengesContainer from "./ChallengesContainer";
 import Challenge from "./Challenge";

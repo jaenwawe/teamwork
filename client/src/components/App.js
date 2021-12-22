@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect } from "react";
 import ReactDom from "react-dom";
 import {BrowserRouter, Switch, Route } from 'react-router-dom';
 import { useSelector, useDispatch} from "react-redux"; 
@@ -12,8 +12,17 @@ import Home from './Home'
 // import AddChallenge from './AddChallenge';
 
 function App(){
-  const user = useSelector((state) => state.users.user)
+  let user = useSelector((state) => state.users.user)
+
+  useEffect(() => {
+    fetch("/me").then((response) => {
+      if (response.ok) {
+        response.json().then((user) => console.log(user));
+      }
+    });
+  }, []);
   const loggedIn = useSelector((state) => state.users.loggedIn)
+  
 
 
       const xmas = (!loggedIn      
