@@ -28,18 +28,8 @@ function Challenge ({key, challenge}){
             dispatch(increaseVote(challenge.id))
           }}>UpVote </button>
 
-          <button
-          onClick={() => {
-          dispatch({type: "INCREASE_VOTE", payload: challenge.id} )}}> UpVote
-          </button>
-
-      
-        <button
-          onClick={() => {
-          dispatch({type: "DECREASE_VOTE", payload: challenge.id} )}}>
-              Down Vote
-          </button>
-      
+       
+    
         <button
           onClick={() => {
             dispatch(decreaseVote(challenge.id));

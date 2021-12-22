@@ -28,6 +28,7 @@ console.log(action);
           votes: state[action.payload].votes + 1,
         
         },
+
       };
     case "DECREASE_VOTE":
       return {

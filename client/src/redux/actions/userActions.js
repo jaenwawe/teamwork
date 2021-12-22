@@ -1,4 +1,23 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch} from "react-redux"; 
+
+  // export function XXXCurrentUserLogin() {
+  //   return (dispatch) => {
+  //     dispatch({ type: "CURRENT_USER"})
+  //       console.log('getCurrentUserLogin')
+  //       fetch("/me")
+  //           .then(res => {
+  //             if (res.ok) { 
+  //               res.json().then(user =>{
+  //               dispatch({ type: "CURRENT_USER", payload: user })
+  //             })
+  //             } else {
+  //             res.json().then(errors => 
+  //             console.error(errors))
+  //             }
+  //           })
+  //         }
+  //       } 
+
 
   export function getCurrentUserLogin() {
     return (dispatch) => {

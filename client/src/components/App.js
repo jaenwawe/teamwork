@@ -1,4 +1,4 @@
-import React, {useEffect } from "react";
+import React, {useEffect,useState } from "react";
 import ReactDom from "react-dom";
 import {BrowserRouter, Switch, Route } from 'react-router-dom';
 import { useSelector, useDispatch} from "react-redux"; 
@@ -6,24 +6,31 @@ import { useSelector, useDispatch} from "react-redux";
 
 import Login from './Login'
 import Home from './Home'
-// import Logout from './Logout'
-// import HomeContainer from '../redux/containers/HomeContainer'
-// import ChallengesContainer from '../redux/containers/ChallengesContainer'
-// import AddChallenge from './AddChallenge';
+
+
+import { increaseVote, decreaseVote, setChallenges, getChallenges } from "../redux/actions/challengeActions"
+import { getSolutions } from "../redux/actions/solutionActions"
 
 function App(){
+  const dispatch = useDispatch()
   let user = useSelector((state) => state.users.user)
+  // const [current, setCurrent] = useState(null);
 
   useEffect(() => {
     fetch("/me").then((response) => {
       if (response.ok) {
-        response.json().then((user) => console.log(user));
+        response.json().then((current) => 
+        {
+          // setCurrent(current)
+          dispatch({ type: "CURRENT_USER", payload: current })
+          dispatch(getSolutions()) 
+          dispatch(getChallenges()) 
+          
+        });
       }
     });
   }, []);
   const loggedIn = useSelector((state) => state.users.loggedIn)
-  
-
 
       const xmas = (!loggedIn      
         ? <Route  path="/"  component= {Login}/>
