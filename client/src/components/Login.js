@@ -29,7 +29,7 @@ const dispatch = useDispatch()
 
     const username = useSelector((state) => state.username)
     const user = useSelector((state) => state.users.user)
-    console.log(user)
+
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')

@@ -3,8 +3,7 @@ import { useSelector } from "react-redux";
 export function getSolutions()
 { 
       return (dispatch) => {
-      // dispatch({ type: "LOADING_SOLUTIONS" })
-        console.log('getSolutions in solutionActions')
+     
       fetch("/solutions")
             .then(res => {
               if (res.ok) { 

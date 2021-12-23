@@ -4,7 +4,9 @@ import { useSelector, useDispatch} from "react-redux";
 import { useHistory } from 'react-router-dom'
 import { useState,useEffect } from 'react'
 
+
 import { addChallenge} from "../redux/actions/challengeActions"
+import { setChallenges} from "../redux/actions/challengeActions"
 
   const AddChallenge = () => {
   const dispatch = useDispatch()
@@ -18,7 +20,9 @@ import { addChallenge} from "../redux/actions/challengeActions"
   {        
         e.preventDefault()
         dispatch(addChallenge(title, question, photo_url)) 
+        dispatch(setChallenges()) 
         history.push('/challenges')
+    
     }
 
     return (

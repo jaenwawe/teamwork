@@ -3,7 +3,7 @@ import { useSelector, useDispatch} from "react-redux";
   export function getCurrentUserLogin() {
     return (dispatch) => {
       dispatch({ type: "CURRENT_USER"})
-        console.log('getCurrentUserLogin')
+    
         fetch("/me")
             .then(res => {
               if (res.ok) { 
@@ -22,7 +22,7 @@ import { useSelector, useDispatch} from "react-redux";
   {
     return (dispatch) => {
     dispatch({ type: "LOADING_USER" });
-      console.log('login current user')
+ 
     fetch("/login", {
       method: "POST",
       headers: {

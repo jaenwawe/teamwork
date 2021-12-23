@@ -3,18 +3,16 @@ import ReactDom from "react-dom";
 import { Link} from "react-router-dom";
 import { useSelector, useDispatch} from "react-redux"; 
 
-import { increaseVote, decreaseVote, setSolutions } from "/Users/jaenwawe/alpha/teamwork/client/src/redux/actions/SolutionActions"
+import { increaseVote, decreaseVote, setSolutions } from "/Users/jaenwawe/alpha/teamwork/client/src/redux/actions/solutionActions"
 
-const Solution = ({key, solution }) => {
+const Solution = ({solution }) => {
 
   const dispatch = useDispatch();
   const solutions= useSelector((state)=> state)
 
-
-  console.log(solutions)
-  
   return (
     <div className="card">
+      con
      <div>Solution Title</div>
       <h2>Name: {solution.title}</h2>
       <h2>{solution.question}</h2>

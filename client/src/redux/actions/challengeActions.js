@@ -8,7 +8,7 @@ export function addChallenge(title, question, photo_url)
 { 
     return (dispatch) => {
     dispatch({ type: "ADDING_CHALLENGE" });
-      console.log('adding a challenge')
+  
     fetch("/challenges", {
       method: "POST",
       headers: {
@@ -36,7 +36,7 @@ export function setChallenges()
 
     return (dispatch) => {
     dispatch({ type: "LOADING_CHALLENGES" });
-      console.log('loading current challenges')
+      
     fetch("/challenges")
           .then(res => {
             if (res.ok) { 

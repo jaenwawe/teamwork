@@ -1,29 +1,29 @@
 
-// import { useEffect} from "react";
-// import { useDispatch, useSelector } from "react-redux";
-// import { useHistory } from "react-router-dom";
-// import { getSolutions } from "../redux/actions/solutionActions"
-//  import Solution from "./Solution"
+import { useEffect} from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory,useParams } from "react-router-dom";
+import { getSolutions } from "../redux/actions/solutionActions";
+ import Solution from "/Users/jaenwawe/alpha/teamwork/client/src/components/Solution";
 
 
 
-function SolutionsContainer(){  
-  // const solutions = useSelector((state) => state.solutions.solutions);
-  // const mapSolutions = () => {
-  //   return solutions.map((solution) => {
-  //     return (
-  //       <Solutions key={solution.id} solution={solution}/>
-  //     )
-  //   })
-  // };
-console.log('solution')
-  return (
-    <div>
-        <div>SolutionsContainer</div>
-      {/* <div className="container">{mapSolutions()}</div> */}
+function SolutionsContainer({challengeId }){  
+  const solutions = useSelector((state) => state.solutions.solutions);
+  const params = useParams()
+  console.log(params)
 
-    </div>
-  );
+    const mapSolutions = () => {
+      return solutions.map((solution) => {
+        return (
+        (params ? <Solution solution={solution}/> : <></>)
+        )
+      })
+    };
+    return (
+      <div>
+        <div className="container">{mapSolutions()}</div>
+      </div>
+    );
 };
 
 export default SolutionsContainer;

@@ -8,21 +8,23 @@ const initialChallengesState = {
 
 
 export function challengesReducer(state = initialChallengesState, action) {
-console.log(action);
+
   switch (action.type) {
     case SET_CHALLENGES:
       return {
         ...state,
-        challenges: action.payload}
+        challenges: action.payload
+      }
 
-    case "DECREASE_VOTE":
-      return {
-        ...state,
-        [action.payload]: {
-          ...state[action.payload],
-          votes: state[action.payload].votes - 1,
-        },
-      };
+    // case "DECREASE_VOTE":
+    //   return {
+    //     ...state,
+    //     [action.payload]: {
+    //       ...state[action.payload],
+    //       votes: state[action.payload].votes - 1,
+    //     },
+    //   };
+
     default:
       return state;
   }

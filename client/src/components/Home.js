@@ -16,7 +16,7 @@ import SolutionsContainer from './SolutionsContainer'
 function Home (){
     
     const user = useSelector((state) => state.users.user)
-    console.log(user)
+
    
     // const currentUser = <>
     //             <Route exact path="/">
@@ -47,8 +47,12 @@ function Home (){
                 <Route exact path="/challenge/add" component = {AddChallenge} />
                
                 <Route path="/challenges/:id" component={Challenge}/>
+                <Route path="/solutions/:id" component= {SolutionsContainer}/>
+
+
                 
-                <Route path="/challenges/:id/solutions" component= {SolutionsContainer} />
+                
+                {/* <Route path="/challenges/:id/solutions" component= {SolutionsContainer} /> */}
              
                 <Route path="/logout" component= {Logout} />
 
