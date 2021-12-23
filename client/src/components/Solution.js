@@ -5,7 +5,7 @@ import { useSelector, useDispatch} from "react-redux";
 
 import { increaseVote, decreaseVote, setSolutions } from "/Users/jaenwawe/alpha/teamwork/client/src/redux/actions/SolutionActions"
 
-const Solution = ({ solution }) => {
+const Solution = ({key, solution }) => {
 
   const dispatch = useDispatch();
   const solutions= useSelector((state)=> state)

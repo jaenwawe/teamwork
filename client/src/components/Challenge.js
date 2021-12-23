@@ -1,19 +1,10 @@
 import React from "react";
 import ReactDom from "react-dom";
+
 import { useSelector, useDispatch} from "react-redux"; 
-
-
-import { increaseVote, decreaseVote } from "/Users/jaenwawe/alpha/teamwork/client/src/redux/actions/challengeActions"
-
-
-
 function Challenge ({key, challenge}){
     const dispatch = useDispatch()
-    // const challenge = useSelector((state) => 
-    // console.log (state.challenges))
-
-
-
+    const challenges = useSelector((state) => state.challenges.challenges);
 
     return (
       <div className="card">
@@ -25,19 +16,10 @@ function Challenge ({key, challenge}){
         <br />
         <button
           onClick={() => {
-            dispatch(increaseVote(challenge.id))
+           // move to for going to add challenge see NavBar
           }}>UpVote </button>
 
        
-    
-        <button
-          onClick={() => {
-            dispatch(decreaseVote(challenge.id));
-          }}> 
-          Down Vote
-        </button>
-
-
       </div>
     );
 };

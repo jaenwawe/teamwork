@@ -15,21 +15,7 @@ console.log(action);
       return {
         ...state,
         challenges: action.payload}
-    // case SET_CHALLENGES:
-    //   return {
-    //     ...state,
-    //     changes: action.payload}
-    
-    case "INCREASE_VOTE":
-      return {
-        ...state,
-        [action.payload]: {
-          ...state[action.payload],
-          votes: state[action.payload].votes + 1,
-        
-        },
 
-      };
     case "DECREASE_VOTE":
       return {
         ...state,
