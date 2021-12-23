@@ -22,6 +22,8 @@ function NavBar() {
             <Link to="/about">About</Link>
             <Link to="/challenge/add">Add a Challenge</Link>
             <Link to="/challenges">Challenges</Link>
+            <Link to="/logout">Logout</Link>
+            
       
         </div>
     );

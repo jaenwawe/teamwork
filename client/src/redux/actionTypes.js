@@ -1,13 +1,3 @@
-export const INCREASE_VOTE = "INCREASE_VOTE";  
-export const DECREASE_VOTE  = "DECREASE_VOTE";
-
-
-
-
-
-
-
-
 export const LOADING_SOLUTION = "LOADING_SOLUTION ";  
 export const SET_SOLUTION= "SET_SOLUTION";
 

@@ -1,4 +1,4 @@
-import ReactDom from "react-dom";
+
 import { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -10,7 +10,6 @@ import Challenge from "/Users/jaenwawe/alpha/teamwork/client/src/components/Chal
 function ChallengesContainer() {
   const challenges = useSelector((state) => state.challenges.challenges);
   const mapChallenges = () => {
-    // let challengeCont= Object.values(challenges)
     return challenges.map((challenge) => {
       return (
         <Challenge key={challenge.id} challenge={challenge}/>
