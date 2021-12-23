@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom';
 import { SET_CHALLENGES} from "../actionTypes";
-import { INCREASE_VOTE} from "../actionTypes";
-import { DECREASE_VOTE } from "../actionTypes";
+
 
 const initialChallengesState = {
   challenges: []

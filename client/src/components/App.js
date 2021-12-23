@@ -5,7 +5,7 @@ import { useSelector, useDispatch} from "react-redux";
 
 import Login from './Login'
 import Home from './Home'
-import { increaseVote, decreaseVote, setChallenges, getChallenges } from "../redux/actions/challengeActions"
+import { setChallenges } from "../redux/actions/challengeActions"
 import { getSolutions } from "../redux/actions/solutionActions"
 
 function App(){
@@ -19,7 +19,7 @@ function App(){
         {
           dispatch({ type: "CURRENT_USER", payload: current })
           dispatch(getSolutions()) 
-          dispatch(getChallenges()) 
+          dispatch(setChallenges()) 
           
         });
       }

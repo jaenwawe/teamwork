@@ -4,24 +4,21 @@ import { useSelector, useDispatch} from "react-redux";
 import { useHistory } from 'react-router-dom'
 import { useState,useEffect } from 'react'
 
+import { addChallenge} from "../redux/actions/challengeActions"
+
   const AddChallenge = () => {
   const dispatch = useDispatch()
+  const history = useHistory()
   const challenges = useSelector((state) => state.challenges);
   const [title, setTitle] = useState('')
   const [question, setQuestion] = useState('')
-  const [photo_url, setPhoto_url] = useState('')
-
- 
-   const history = useHistory()
-
+  const [photo_url, setPhotoUrl] = useState('')
 
   const handleSubmit = (e) => 
-  {
-        //variables  title, question,photo_url
-        
-        e.preventDefault();
-        //dispatch(addChallenge(title, question,photo_url) ) 
-        //keep showing problems and challenges
+  {        
+        e.preventDefault()
+        dispatch(addChallenge(title, question, photo_url)) 
+        history.push('/challenges')
     }
 
     return (
@@ -59,7 +56,7 @@ import { useState,useEffect } from 'react'
                                       type="photo_url" 
                                       name="photo_url" 
                                       value={photo_url}
-                                      onChange={(e) => setPhoto_url(e.target.value)}>
+                                      onChange={(e) => setPhotoUrl(e.target.value)}>
                                   </input>
                               </label>
                           </div>

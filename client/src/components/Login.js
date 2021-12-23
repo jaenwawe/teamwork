@@ -3,7 +3,7 @@ import { useSelector, useDispatch} from "react-redux";
 import ReactDom from "react-dom";
 
 
-import { increaseVote, decreaseVote, setChallenges, getChallenges } from "../redux/actions/challengeActions"
+import { setChallenges} from "../redux/actions/challengeActions"
 import { getSolutions } from "../redux/actions/solutionActions"
 
 import { loginCurrentUser} from "../redux/actions/userActions";
@@ -18,13 +18,13 @@ import Home from "./Home";
 
 
 function Login() {
-    const dispatch = useDispatch()
+const dispatch = useDispatch()
 
     function handleSubmit(e){
-        e.preventDefault();
+        e.preventDefault()
         dispatch(loginCurrentUser(email, password) ) 
         dispatch(getSolutions()) 
-        dispatch(getChallenges()) 
+        dispatch(setChallenges()) 
     }
 
     const username = useSelector((state) => state.username)
