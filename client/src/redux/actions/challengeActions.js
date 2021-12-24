@@ -2,38 +2,41 @@ import { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 
-export function getChallenges()
+
+
+export function addChallenge(title, question, photo_url)
 { 
-      return (dispatch) => {
-      // dispatch({ type: "LOADING_CHALLENGES" })
-        console.log('getChallenges in challengeActions')
-      fetch("/challenges")
-            .then(res => {
-              if (res.ok) { 
-                res.json().then(challenges =>{
-                  dispatch({ type: "SET_CHALLENGES", payload: challenges })
+    return (dispatch) => {
+    dispatch({ type: "ADDING_CHALLENGE" });
+  
+    fetch("/challenges", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({title, question,  photo_url}),
+    })
+          .then(res => {
+            if (res.ok) { 
+              res.json().then(challenge =>{
+                dispatch({ type: "SET_CHALLENGE", payload: challenge })
               })
-             } else {
+            }else {
               res.json().then(errors => 
               console.error(errors))
             }
         })
-      }
+      } 
     }
-
-
-
-
-
-
-
+    
+    
 
 export function setChallenges()
 {
 
     return (dispatch) => {
     dispatch({ type: "LOADING_CHALLENGES" });
-      console.log('loading current challenges')
+      
     fetch("/challenges")
           .then(res => {
             if (res.ok) { 
@@ -48,17 +51,4 @@ export function setChallenges()
     }
   }
 
-
-export function increaseVote(id) {
-  return {
-    type: "INCREASE_VOTE",
-    payload: id,
-  };
-}
-
-export function decreaseVote(id) {
-  return {
-    type: "DECREASE_VOTE",
-    payload: id,
-  };
-}
+         //variables  title, question,photo_url

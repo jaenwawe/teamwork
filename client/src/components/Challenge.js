@@ -1,43 +1,30 @@
 import React from "react";
 import ReactDom from "react-dom";
+import { useHistory } from 'react-router-dom'
+
 import { useSelector, useDispatch} from "react-redux"; 
-
-
-import { increaseVote, decreaseVote } from "/Users/jaenwawe/alpha/teamwork/client/src/redux/actions/challengeActions"
-
-
 
 function Challenge ({key, challenge}){
     const dispatch = useDispatch()
-    // const challenge = useSelector((state) => 
-    // console.log (state.challenges))
-
-
-
-
+    const history = useHistory()
+    const challenges = useSelector((state) => state.challenges.challenges);
+    console.log(challenge.title)
+    console.log(challenge.question)
     return (
       <div className="card">
         <h2>Name: {challenge.title}</h2>
         <h2>{challenge.question}</h2>
             <img src={challenge.image_url} alt={challenge.title}></img>
-        <p>Votes: {challenge.votes}</p>
-    
+       
         <br />
         <button
-          onClick={() => {
-            dispatch(increaseVote(challenge.id))
-          }}>UpVote </button>
-
-       
-    
-        <button
-          onClick={() => {
-            dispatch(decreaseVote(challenge.id));
-          }}> 
-          Down Vote
-        </button>
-
-
+          onClick={() => history.push(`/solutions/${challenge.id}`)
+        }>
+            Solutions</button>
+        {/* <button
+          onClick={() => history.push(`/challenges/${challenge.id}/solutions`)
+        }>
+            Solutions</button> */}
       </div>
     );
 };

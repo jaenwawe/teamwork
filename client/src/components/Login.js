@@ -3,7 +3,7 @@ import { useSelector, useDispatch} from "react-redux";
 import ReactDom from "react-dom";
 
 
-import { increaseVote, decreaseVote, setChallenges, getChallenges } from "../redux/actions/challengeActions"
+import { setChallenges} from "../redux/actions/challengeActions"
 import { getSolutions } from "../redux/actions/solutionActions"
 
 import { loginCurrentUser} from "../redux/actions/userActions";
@@ -18,66 +18,57 @@ import Home from "./Home";
 
 
 function Login() {
-  const dispatch = useDispatch()
+const dispatch = useDispatch()
 
-
-
-  function handleSubmit(e){
-    e.preventDefault();
-    dispatch(loginCurrentUser(email, password) ) 
-    // dispatch(getCurrentUserLogin()) 
-    dispatch(getSolutions()) 
-    dispatch(getChallenges()) 
+    function handleSubmit(e){
+        e.preventDefault()
+        dispatch(loginCurrentUser(email, password) ) 
+        dispatch(getSolutions()) 
+        dispatch(setChallenges()) 
     }
 
+    const username = useSelector((state) => state.username)
+    const user = useSelector((state) => state.users.user)
 
-  const username = useSelector((state) => state.username)
-  const user = useSelector((state) => state.users.user)
-  console.log(user)
 
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
     
-
-
-   
-      return (
+return (
     <div>
-
-
         <div className="form"> 
 
-        <h1>Login </h1>
+            <h1>Login </h1>
 
-        <h5> Already a member? Enter your email address and password to login</h5>
-        <form  onSubmit={handleSubmit}>
-                            
-                    <div className="mb-3" >
-                        <label className="form-label">Email address 
-                            <input 
-                                type="email" 
-                                name="email" 
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}>
-                            </input>
-                        </label>
-                    </div>
+            <h5> Already a member? Enter your email address and password to login</h5>
+            <form  onSubmit={handleSubmit}>
+                                
+                        <div className="mb-3" >
+                            <label className="form-label">Email address 
+                                <input 
+                                    type="email" 
+                                    name="email" 
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}>
+                                </input>
+                            </label>
+                        </div>
 
-                    <div className="mb-3">
-                        <label  className="form-label">Password
-                            <input 
-                                type="password" 
-                                name="password" 
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}>    
-                            </input>
-                        </label>
-                    </div>
-            
-                    <button type="submit" className="btn btn-primary">Submit</button>
-        </form>
-        
+                        <div className="mb-3">
+                            <label  className="form-label">Password
+                                <input 
+                                    type="password" 
+                                    name="password" 
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}>    
+                                </input>
+                            </label>
+                        </div>
+                
+                        <button type="submit" className="btn btn-primary">Submit</button>
+            </form>   
         </div> 
-    </div>)
+    </div>
+    )
 }
 export default Login;
