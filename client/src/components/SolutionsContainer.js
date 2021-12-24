@@ -7,15 +7,19 @@ import { getSolutions } from "../redux/actions/solutionActions";
 
 
 
-function SolutionsContainer({challengeId }){  
+function SolutionsContainer(){  
   const solutions = useSelector((state) => state.solutions.solutions);
   const params = useParams()
-  console.log(params)
+ // console.log(params)
+  //console.log(solutions[0].challenge_id == params)
+  //console.log(solutions[0].challenge_id)
+  //console.log(params.id)
+  //console.log(solutions[0].challenge_id == params.id)
 
     const mapSolutions = () => {
       return solutions.map((solution) => {
         return (
-        (params ? <Solution solution={solution}/> : <></>)
+        (solution.challenge_id == params.id ? <Solution solution={solution}/> : <></>)
         )
       })
     };
