@@ -3,7 +3,11 @@ class ChallengesController < ApplicationController
         render json: Challenge.all
       end
 
-        
+      def show
+        challenge = Challenge.find(params[:id])
+        render json: challenge
+      end
+
 def create
      new_challenge = Challenge.new(challenge_params)
     if new_challenge.save

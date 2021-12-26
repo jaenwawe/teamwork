@@ -8,8 +8,6 @@ function Challenge ({key, challenge}){
     const dispatch = useDispatch()
     const history = useHistory()
     const challenges = useSelector((state) => state.challenges.challenges);
-    console.log(challenge.title)
-    console.log(challenge.question)
     return (
       <div className="card">
         <h2>Name: {challenge.title}</h2>

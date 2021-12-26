@@ -65,7 +65,6 @@ import { setChallenges} from "../redux/actions/challengeActions"
                               </label>
                           </div>
   
-                  
                           <button type="submit" className="btn btn-primary">Submit</button>
               </form>   
           </div> 

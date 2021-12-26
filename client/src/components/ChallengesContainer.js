@@ -6,7 +6,6 @@ import { setChallenges, getChallenges } from "../redux/actions/challengeActions"
 import Challenge from "/Users/jaenwawe/alpha/teamwork/client/src/components/Challenge"
 
 
-
 function ChallengesContainer() {
   const challenges = useSelector((state) => state.challenges.challenges);
   const mapChallenges = () => {

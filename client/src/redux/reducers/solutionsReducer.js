@@ -1,7 +1,8 @@
 import { SET_SOLUTIONS } from "../actionTypes";
 import { LOADING_SOLUTIONS } from "../actionTypes";
 const initialSolutionsState = {
-  solutions: []
+  solutions: [],
+  challenge_id: null,
 };
 
 

@@ -1,4 +1,6 @@
-import { useSelector } from "react-redux";
+import { useEffect} from "react";
+import { useDispatch, useSelector } from "react-redux";
+
 
 export function getSolutions()
 { 
@@ -18,27 +20,22 @@ export function getSolutions()
       }
     }
 
-    export function addSolutions() {
+    export function addSolution(user_id, challenge_id, photo_url, explaination, hints, questions) {
       return (dispatch) => {
-    
-        fetch('/newSolution', {
+        dispatch({ type: "LOADING_SOLUTIONS"});
+
+
+        fetch('/solutions', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-           "user_id" : null,
-           "challenge_id": null,
-           "photo_url": "",
-           "explaination": "",
-           "hints":"",
-           "questions":""
-         })
+        body: JSON.stringify({user_id, challenge_id, photo_url, explaination, hints, questions}),
         })
         .then(res => {
           if (res.ok) { 
-            res.json().then(solutions =>{
-              dispatch({ type: "SET_SOLUTIONS", payload : solutions })
+            res.json().then(solution =>{
+              dispatch({ type: "SET_SOLUTION", payload : solution })
           })
          } else {
           res.json().then(errors => 
@@ -47,9 +44,4 @@ export function getSolutions()
           })
         }   
     }
-    
-    
-    
-    
-   
     

@@ -15,7 +15,7 @@ export function usersReducer(state = initialUsersState, action) {
         user: action.payload,
         loggedIn: true
       }
-        case CURRENT_USER      :
+        case CURRENT_USER:
   
         return {
           ...state,

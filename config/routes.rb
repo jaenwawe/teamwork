@@ -4,9 +4,7 @@ Rails.application.routes.draw do
   get "/me", to: "users#show"
   
   
-  resources :solutions
-  resources :challenges
+  resources :solutions, except: [:update, :delete]
+  resources :challenges, except: [:update, :delete]
   resources :users, only: [:show, :create]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-
 end

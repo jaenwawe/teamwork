@@ -1,9 +1,11 @@
 import ReactDOM from 'react-dom';
 import { SET_CHALLENGES} from "../actionTypes";
+import {CURRENT_CHALLENGE } from "../actionTypes";
 
 
 const initialChallengesState = {
-  challenges: []
+  challenges: [],
+  current_challenge: {}
 };
 
 
@@ -13,17 +15,14 @@ export function challengesReducer(state = initialChallengesState, action) {
     case SET_CHALLENGES:
       return {
         ...state,
-        challenges: action.payload
+        challenges: action.payload,
+        current_challenge: {}
       }
 
-    // case "DECREASE_VOTE":
-    //   return {
-    //     ...state,
-    //     [action.payload]: {
-    //       ...state[action.payload],
-    //       votes: state[action.payload].votes - 1,
-    //     },
-    //   };
+      case CURRENT_CHALLENGE:
+        return {
+          ...state,
+          current_challenge : action.payload}
 
     default:
       return state;

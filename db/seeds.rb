@@ -97,7 +97,7 @@ Solution.create!(
 )
 
 Solution.create!(
-    user_id: pop.id,
+    user_id: jill.id,
     challenge_id: vagueChallenge.id,
     questions: "Wow, you are going to spend the first 10 minutes, if pros/cons are based on time.  Then you need to know both.  Ask about for atleast three sample inputs, each one may be different"
 )

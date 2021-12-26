@@ -8,13 +8,6 @@ import {createBrowserHistory} from "history"
 
 function NavBar() {
 
-    
-    // function handleLinkClick(e) {
-    //     e.preventDefault()
-    //     onChangePage(e.target.pathname)
-    // }
-    
-    
     return (
         <div>
             <div>NavBar</div>

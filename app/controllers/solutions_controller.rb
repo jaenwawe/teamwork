@@ -1,9 +1,25 @@
 class SolutionsController < ApplicationController
-   def index    
-     render json: Solution.all
-   end
+
+  def index    
+    render json: Solution.all
+  end
 
 
+   def create
+    new_solution = Solution.new(solution_params)
+    if new_solution.save
+      render json: new_solution, status: :created
+    else render json: new_solution.errors.full_messages,status: :unprocessable_entity
+    end
+  end
+      
+private
 
+  def solution_params
+    params.permit(:user_id, :challenge_id, :photo_url, :explaination, :hints, :questions)
+  end
 
+  def authorize
+    @current_user = User.find_by_id(session[:user_id])
+  end
 end
