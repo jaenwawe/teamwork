@@ -7,18 +7,16 @@ import { getSolutions,addSolution } from "../redux/actions/solutionActions";
  import {setCurrentChallenge} from "../redux/actions/challengeActions"
 
 function SolutionsContainer(){  
-const solutions = useSelector((state) => state.solutions.solutions);
+const solutionArr = useSelector((state) => state.solutions.solutions);
 const history = useHistory()
  const params = useParams()
  const user_id  = (useSelector((state) => state.users.user.id))
  
   const mapSolutions = () => {
-    return solutions.map((solution) => {
-
-  
+    return solutionArr.map((solution) => {
       return (
       (solution.challenge_id == params.id 
-        ?  <Solution solution={solution}/> 
+        ?  <Solution key={solution.id} solution={solution}/> 
         : <></>)
       )
     })

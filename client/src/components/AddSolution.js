@@ -1,8 +1,7 @@
 import React from "react";
 import ReactDom from "react-dom";
-import { useState,useEffect } from 'react'
+import { useState} from 'react'
 
-// import { Link} from "react-router-dom";
 import { useHistory } from 'react-router-dom'
 import { useSelector, useDispatch} from "react-redux"; 
 
@@ -46,7 +45,7 @@ const [photo_url, setPhotoUrl] = useState('')
                                   <input 
                                       type="explaination" 
                                       name="explaination" 
-                                      value={setExplaination} 
+                                      value={explaination} 
                                       onChange={(e) =>  setExplaination(e.target.value)}>
                                   </input>
                               </label>

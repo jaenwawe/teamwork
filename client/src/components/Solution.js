@@ -5,7 +5,7 @@ import { useSelector, useDispatch} from "react-redux";
 import { addSolutions, setSolutions } from "../redux/actions/solutionActions"
 import {setCurrentChallenge} from "../redux/actions/challengeActions"
 
-const Solution = ({solution}) => {
+const Solution = ({key, solution}) => {
 
   const dispatch = useDispatch();
   dispatch(setCurrentChallenge(solution.challenge_id))
