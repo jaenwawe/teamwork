@@ -26,7 +26,7 @@ const Solution = ({key, solution}) => {
       
     <br/>
 
-     <button><Link to="/newSolution"  className= "bar">Add a Solution</Link></button> 
+     {/* <button><Link to="/newSolution"  className= "bar">Add a Solution</Link></button>  */}
     </div>
   );
 };

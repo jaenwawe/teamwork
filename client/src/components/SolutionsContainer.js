@@ -8,14 +8,18 @@ import { getSolutions,addSolution } from "../redux/actions/solutionActions";
 
 function SolutionsContainer(){  
 const solutionArr = useSelector((state) => state.solutions.solutions);
+
+//empty second time?
+console.log(solutionArr)
 const history = useHistory()
- const params = useParams()
+ const challenge_id = useParams().id
  const user_id  = (useSelector((state) => state.users.user.id))
+
  
   const mapSolutions = () => {
     return solutionArr.map((solution) => {
       return (
-      (solution.challenge_id == params.id 
+      (solution.challenge_id == challenge_id 
         ?  <Solution key={solution.id} solution={solution}/> 
         : <></>)
       )
@@ -23,7 +27,8 @@ const history = useHistory()
   };
   return (
     <div>
-        <button onClick={() => history.push(`/newSolution`)}> Add a solution </button>
+        <button onClick={() => history.push(`/newSolution/${challenge_id}`)}> Add a solution </button>
+
       <div className="container">{mapSolutions()}</div>
     </div>
   );

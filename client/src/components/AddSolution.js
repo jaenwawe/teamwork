@@ -2,36 +2,36 @@ import React from "react";
 import ReactDom from "react-dom";
 import { useState} from 'react'
 
-import { useHistory } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import { useSelector, useDispatch} from "react-redux"; 
 
 import { addSolution, getSolutions} from "../redux/actions/solutionActions"
 import {getCurrentChallenge} from "../redux/actions/challengeActions"
 
 const AddSolution = () => {
-const dispatch = useDispatch()
-const history = useHistory()  
-const solutions= useSelector((state)=> state)
+    const dispatch = useDispatch()
+    const history = useHistory() 
+    const challenge_id = useParams().id 
+
+    const user_id = useSelector((state) => state.users.user.id)
+    // const challenge_id = useSelector((state) => state.challenges.current_challenge.id)
 
 
-const user_id = useSelector((state) => state.users.user.id)
-const challenge_id = useSelector((state) => state.challenges.current_challenge.id)
+    const [explaination, setExplaination] = useState('')
+    const [hints, setHints] = useState('')
 
+    const [questions, setQuestion] = useState('')
+    const [photo_url, setPhotoUrl] = useState('')
 
-const [explaination, setExplaination] = useState('')
-const [hints, setHints] = useState('')
-
-const [questions, setQuestion] = useState('')
-const [photo_url, setPhotoUrl] = useState('')
-
-  const handleSubmit = (e) => 
-  {        
-        e.preventDefault()
-        // dispatch(getCurrentChallenge())
-        dispatch(addSolution(user_id, challenge_id, photo_url, explaination, hints, questions)) 
-        dispatch(getSolutions()) 
-        history.push(`/solutions/${challenge_id}`) 
-    }
+    const handleSubmit = (e) => 
+    {        
+            e.preventDefault()
+            // dispatch(getCurrentChallenge())
+             dispatch(addSolution(user_id, challenge_id, photo_url, explaination, hints, questions)) 
+            // dispatch(getSolutions()) 
+            // history.push(`/solutions/${challenge_id}`) 
+            history.goBack() 
+        }
 
     return (
       <div>

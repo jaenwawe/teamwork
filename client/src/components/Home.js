@@ -33,7 +33,7 @@ function Home (){
             
             <Route path="/challenges/:id" component={Challenge}/>
             <Route path="/solutions/:id" component= {SolutionsContainer}/>
-            <Route path="/newSolution" component= {AddSolution} />
+            <Route path="/newSolution/:id" component= {AddSolution} />
 
             <Route path="/logout" component= {Logout} />
     </Switch>
