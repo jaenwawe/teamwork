@@ -1,4 +1,5 @@
 import { useSelector, useDispatch} from "react-redux"; 
+import { useHistory} from "react-router-dom";
 
   export function getCurrentUserLogin() {
     return (dispatch) => {
@@ -43,4 +44,22 @@ import { useSelector, useDispatch} from "react-redux";
       })
     } 
   }
-  
+
+
+
+ export function logoutCurrentUser()
+ {  
+  return (dispatch) => {
+      const user = {}
+      const history = useHistory()
+      fetch("/logout", {
+        method: "DELETE"
+    })
+    .then(resp => {
+        if (resp.ok) {
+            dispatch ({type: "REMOVE_CURRENT_SESSION", payload:user})
+            history.push("/")
+        }
+    })
+  }
+}
