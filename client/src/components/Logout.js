@@ -13,9 +13,6 @@ function Logout(){
         </div>) 
 
 
-
-
-
 }
 
 export default Logout

@@ -20,11 +20,18 @@ export function getSolutions()
       }
     }
 
+
+
+
+
+
+
+
+
+
     export function addSolution(user_id, challenge_id, photo_url, explaination, hints, questions) {
       return (dispatch) => {
-        dispatch({ type: "LOADING_SOLUTIONS"});
-
-
+   
         fetch('/solutions', {
         method: 'POST',
         headers: {

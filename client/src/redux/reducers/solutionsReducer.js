@@ -2,7 +2,7 @@ import { SET_SOLUTIONS } from "../actionTypes";
 import { LOADING_SOLUTIONS } from "../actionTypes";
 const initialSolutionsState = {
   solutions: [],
-  challenge_id: null,
+  current_challenge: {}
 };
 
 
@@ -11,7 +11,9 @@ export function solutionsReducer(state = initialSolutionsState, action) {
     case SET_SOLUTIONS:
           return {
             ...state,
-            solutions: action.payload }
+            solutions: action.payload,
+            current_challenge: {} 
+          }
     case LOADING_SOLUTIONS:
       return {
         ...state,

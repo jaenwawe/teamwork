@@ -10,7 +10,6 @@ const initialChallengesState = {
 
 
 export function challengesReducer(state = initialChallengesState, action) {
-
   switch (action.type) {
     case SET_CHALLENGES:
       return {

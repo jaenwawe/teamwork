@@ -38,10 +38,10 @@ export function getCurrentChallenge() {
                   res.json().then(errors => 
                   console.error(errors))
               }
-                })
-              }
-            } 
-      
+            })
+          }
+        } 
+  
 
 
 
