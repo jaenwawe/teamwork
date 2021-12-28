@@ -58,3 +58,30 @@ export function logoutCurrentUser()
    history.push("/")
   }
 }
+
+
+
+
+
+export function addUser(user_id, challenge_id, photo_url, explaination, hints, questions) {
+  return (dispatch) => {
+
+    fetch('/signup', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({user_id, challenge_id, photo_url, explaination, hints, questions}),
+    })
+    .then(res => {
+      if (res.ok) { 
+        res.json().then(suser =>{
+          dispatch({ type: "SET_USER", payload : suser })
+      })
+     } else {
+      res.json().then(errors => 
+      console.error(errors))
+          }
+      })
+    }   
+}

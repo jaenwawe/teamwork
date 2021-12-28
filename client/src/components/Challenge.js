@@ -1,11 +1,7 @@
-import React from "react";
-import ReactDom from "react-dom";
 import { useHistory } from 'react-router-dom'
-
-import { useSelector, useDispatch} from "react-redux"; 
+import { useSelector} from "react-redux"; 
 
 function Challenge ({key, challenge}){
-    const dispatch = useDispatch()
     const history = useHistory()
     const challenges = useSelector((state) => state.challenges.challenges);
     return (
@@ -19,10 +15,7 @@ function Challenge ({key, challenge}){
           onClick={() => history.push(`/solutions/${challenge.id}`)
         }>
             Solutions</button>
-        {/* <button
-          onClick={() => history.push(`/challenges/${challenge.id}/solutions`)
-        }>
-            Solutions</button> */}
+
       </div>
     );
 };

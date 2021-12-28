@@ -16,7 +16,7 @@ import AddSolution from './AddSolution'
 
 function Home (){
     
-    const user = useSelector((state) => state.users.user)
+    // const user = useSelector((state) => state.users.user)
 
     return (    
 

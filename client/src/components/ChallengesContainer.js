@@ -1,6 +1,6 @@
 
-import { useEffect} from "react";
-import { useDispatch, useSelector } from "react-redux";
+import {useEffect} from "react";
+import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { setChallenges, getChallenges } from "../redux/actions/challengeActions"
 import Challenge from "/Users/jaenwawe/alpha/teamwork/client/src/components/Challenge"
@@ -8,6 +8,9 @@ import Challenge from "/Users/jaenwawe/alpha/teamwork/client/src/components/Chal
 
 function ChallengesContainer() {
   const challenges = useSelector((state) => state.challenges.challenges);
+  
+  useEffect(()=>{mapChallenges()},[challenges])
+
   const mapChallenges = () => {
     return challenges.map((challenge) => {
       return (

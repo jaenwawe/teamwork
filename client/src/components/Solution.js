@@ -1,20 +1,5 @@
-import React from "react";
-import ReactDom from "react-dom";
-import { Link} from "react-router-dom";
-import { useSelector, useDispatch} from "react-redux"; 
-import { addSolutions, setSolutions } from "../redux/actions/solutionActions"
-import {setCurrentChallenge} from "../redux/actions/challengeActions"
 
 const Solution = ({key, solution}) => {
-
-  const dispatch = useDispatch();
-  dispatch(setCurrentChallenge(solution.challenge_id))
-  console.log(solution.challenge_id)
- 
-
-
-
-
 
   return (
     <div className="card">
@@ -26,7 +11,6 @@ const Solution = ({key, solution}) => {
       
     <br/>
 
-     {/* <button><Link to="/newSolution"  className= "bar">Add a Solution</Link></button>  */}
     </div>
   );
 };

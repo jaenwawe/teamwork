@@ -16,8 +16,6 @@ const AddSolution = () => {
     const user_id = useSelector((state) => state.users.user.id)
     let solutionsArr = useSelector((state) => state.solutions.solutions)
     console.log(solutionsArr)
-    // const challenge_id = useSelector((state) => state.challenges.current_challenge.id)
-
 
     const [explaination, setExplaination] = useState('')
     const [hints, setHints] = useState('')
@@ -27,11 +25,9 @@ const AddSolution = () => {
     const handleSubmit = (e) => 
     {        
             e.preventDefault()
-           // dispatch(getCurrentChallenge())
              dispatch(addSolution(user_id, challenge_id, photo_url, explaination, hints, questions)) 
              dispatch(getSolutions()) 
              history.push(`/solutions/${challenge_id}`) 
-            //history.goBack() 
         }
 
     return (
