@@ -9,7 +9,7 @@ let solutionArr = useSelector((state) => state.solutions.solutions)
 const history = useHistory()
 const challenge_id = useParams().id
 
-useEffect(()=>{mapSolutions()},[solutionArr])
+useEffect(()=>{mapSolutions()},[])
  
   const mapSolutions = () => {
     return solutionArr.map((solution) => {
