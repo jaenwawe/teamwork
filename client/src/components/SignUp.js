@@ -6,7 +6,7 @@ import ReactDom from "react-dom";
 import { setChallenges} from "../redux/actions/challengeActions"
 import { getSolutions } from "../redux/actions/solutionActions"
 
-import { addUser} from "../redux/actions/userActions";
+
 import {getCurrentUserLogin} from "../redux/actions/userActions";
 
 import { createBrowserHistory} from "history";
@@ -14,7 +14,7 @@ import { createBrowserHistory} from "history";
 function SignUp() {
 const dispatch = useDispatch()
 
-    function handleSubmit(e){
+    function signUpSubmit(e){
         e.preventDefault()
         dispatch(addUser(username, password, email, first_name, bio)  
         dispatch(getSolutions()) 
@@ -28,17 +28,14 @@ const dispatch = useDispatch()
     const [password, setPassword] = useState('')
     const [email, setEmail] = useState('')
     const [first_name, setFirstName] = useState('')
-    const [bio, setBioa] = useState('')
+    const [bio, setBio] = useState('')
 
     
 return (
     <div>
         <div className="form"> 
-
             <h1>Signup Here </h1>
-
-       
-            <form  onSubmit={handleSubmit}>
+            <form  onSubmit={signUpSubmit}>
 
             <div className="mb-3" >
                             <label className="form-label">First Name
@@ -51,7 +48,6 @@ return (
                             </label>
                         </div>
 
-
             <div className="mb-3" >
                             <label className="form-label">Username
                                 <input 
@@ -62,8 +58,6 @@ return (
                                 </input>
                             </label>
                         </div>
-
-
 
                         <div className="mb-3" >
                             <label className="form-label">Email address 
@@ -87,8 +81,6 @@ return (
                             </label>
                         </div>
                 
-
-
                         <div className="mb-3" >
                             <label className="form-label">Username
                                 <input 
