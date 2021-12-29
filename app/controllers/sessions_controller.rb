@@ -13,10 +13,6 @@ class SessionsController < ApplicationController
 
 
       def destroy
-        if current_user
           session.delete :user_id
-        else
-          render json: { error: 'no active session'}, status: :unprocessable_entity
-        end
       end
     end
