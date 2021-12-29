@@ -2,19 +2,13 @@ import React, {useState } from "react";
 import { useSelector, useDispatch} from "react-redux"; 
 import ReactDom from "react-dom";
 
-
 import { setChallenges} from "../redux/actions/challengeActions"
 import { getSolutions } from "../redux/actions/solutionActions"
 
 import { loginCurrentUser} from "../redux/actions/userActions";
 import { getCurrentUserLogin} from "../redux/actions/userActions";
-import { Redirect } from "react-router-dom";
+
 import { createBrowserHistory} from "history";
-
-
-import ChallengesContainer from "./ChallengesContainer";
-import Challenge from "./Challenge";
-import Home from "./Home";
 
 
 function Login() {
@@ -36,6 +30,7 @@ const dispatch = useDispatch()
     
 return (
     <div>
+
         <div className="form"> 
 
             <h1>Login </h1>

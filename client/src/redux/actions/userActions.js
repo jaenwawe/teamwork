@@ -54,7 +54,7 @@ export function logoutCurrentUser()
      fetch("/logout", {
        method: "DELETE"
    })
-   dispatch ({type: "REMOVE_CURRENT_SESSION", payload:user})
+   dispatch ({type: "REMOVE_CURRENT_SESSION", payload: user})
    history.push("/")
   }
 }
@@ -63,7 +63,7 @@ export function logoutCurrentUser()
 
 
 
-export function addUser(user_id, challenge_id, photo_url, explaination, hints, questions) {
+export function addUser(username,  password,  email, first_name, bio) {
   return (dispatch) => {
 
     fetch('/signup', {
@@ -71,12 +71,12 @@ export function addUser(user_id, challenge_id, photo_url, explaination, hints, q
     headers: {
         'Content-Type': 'application/json'
     },
-    body: JSON.stringify({user_id, challenge_id, photo_url, explaination, hints, questions}),
+    body: JSON.stringify({username,  password,  email, first_name, bio}),
     })
     .then(res => {
       if (res.ok) { 
-        res.json().then(suser =>{
-          dispatch({ type: "SET_USER", payload : suser })
+        res.json().then(user =>{
+          dispatch({ type: "SET_USER", payload : user })
       })
      } else {
       res.json().then(errors => 
