@@ -1,15 +1,17 @@
 
 import {useEffect} from "react";
-import { useSelector } from "react-redux";
-// import { useHistory } from "react-router-dom";
-// import { setChallenges, getChallenges } from "../redux/actions/challengeActions"
+import { useSelector, useDispatch } from "react-redux";
+import { setChallenges, getChallenges } from "../redux/actions/challengeActions"
 import Challenge from "/Users/jaenwawe/alpha/teamwork/client/src/components/Challenge"
 
 
 function ChallengesContainer() {
+  const dispatch = useDispatch()
   const challenges = useSelector((state) => state.challenges.challenges);
   
-  useEffect(()=>{mapChallenges()},[challenges])
+  useEffect(()=>{
+    dispatch(setChallenges())  
+    },[])
 
   const mapChallenges = () => {
     return challenges.map((challenge) => {

@@ -1,17 +1,21 @@
 import {useEffect} from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory,useParams } from "react-router-dom";
  import Solution from "/Users/jaenwawe/alpha/teamwork/client/src/components/Solution";
+ import {getSolutions} from "../redux/actions/solutionActions";
 
 function SolutionsContainer(){  
 const solutionArr = useSelector((state) => state.solutions.solutions)
-console.log(solutionArr)
+const dispatch = useDispatch()
 
 const history = useHistory()
 const challenge_id = useParams().id
 
-useEffect(()=>{mapSolutions()},[solutionArr])
- 
+
+useEffect(()=>{
+  dispatch(getSolutions())  
+  },[])
+
   const mapSolutions = () => {
     
     return solutionArr.map((solution) => {
