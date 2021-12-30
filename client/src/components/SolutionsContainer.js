@@ -4,7 +4,8 @@ import { useHistory,useParams } from "react-router-dom";
  import Solution from "/Users/jaenwawe/alpha/teamwork/client/src/components/Solution";
 
 function SolutionsContainer(){  
-let solutionArr = useSelector((state) => state.solutions.solutions)
+const solutionArr = useSelector((state) => state.solutions.solutions)
+console.log(solutionArr)
 
 const history = useHistory()
 const challenge_id = useParams().id

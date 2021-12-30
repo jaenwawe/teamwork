@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   
   resources :solutions, except: [:update, :delete]
   resources :challenges, except: [:update, :delete]
-  resources :users, only: [:show, :create]
+  
 end

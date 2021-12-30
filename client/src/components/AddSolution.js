@@ -15,7 +15,7 @@ const AddSolution = () => {
 
     const user_id = useSelector((state) => state.users.user.id)
     let solutionsArr = useSelector((state) => state.solutions.solutions)
-    console.log(solutionsArr)
+
 
     const [explaination, setExplaination] = useState('')
     const [hints, setHints] = useState('')
@@ -24,17 +24,17 @@ const AddSolution = () => {
 
     const handleSubmit = (e) => 
     {        
-            e.preventDefault()
-             dispatch(addSolution(user_id, challenge_id, photo_url, explaination, hints, questions)) 
-             dispatch(getSolutions()) 
-             history.push(`/solutions/${challenge_id}`) 
+        e.preventDefault()
+        dispatch(addSolution(user_id, challenge_id, photo_url, explaination, hints, questions)) 
+        dispatch(getSolutions()) 
+        history.push(`/solutions/${challenge_id}`) 
         }
 
     return (
       <div>
           <div className="form"> 
   
-              <h5> What are your solutins, questions, or hints</h5>
+              <h5> What are your solutions, questions, or hints</h5>
               <form  onSubmit={handleSubmit}>
                                   
                           <div className="mb-3" >

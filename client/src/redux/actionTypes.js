@@ -1,7 +1,3 @@
-export const LOADING_SOLUTION = "LOADING_SOLUTION ";  
-export const SET_SOLUTION= "SET_SOLUTION";
-
-
 export const LOADING_USER = "LOADING_USER"
 export const SET_USER = "SET_USER"
 export const LOADING_USERS = "LOADING_USERS"
