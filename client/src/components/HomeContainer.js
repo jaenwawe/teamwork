@@ -4,6 +4,8 @@ import ReactDom from "react-dom";
 import { useSelector, useDispatch} from "react-redux"; 
 import { useHistory } from "react-router-dom";
 
+import ChallengesContainer from "./ChallengesContainer";
+
 
 function HomeContainer()
 {
@@ -12,8 +14,7 @@ let history = useHistory();
 
 
     return(
-        <div>Home Container    
-        </div>
+        <ChallengesContainer/> 
         ) 
     }
 
