@@ -9,7 +9,7 @@ const solutionArr = useSelector((state) => state.solutions.solutions)
 const dispatch = useDispatch()
 
 const history = useHistory()
-const challenge_id = useParams().id
+const {challenge_id} = useParams()
 
 
 // useEffect(()=>{

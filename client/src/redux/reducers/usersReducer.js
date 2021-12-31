@@ -13,20 +13,21 @@ const initialUsersState = {
 export function usersReducer(state = initialUsersState, action) {
 
   switch (action.type) {
-    case SET_USER:
 
+    case SET_USER:
       return {
         ...state,
         user: action.payload,
         loggedIn: true
       }
-        case CURRENT_USER:
-  
-        return {
-          ...state,
-          user: action.payload,
-          loggedIn: true}
 
+      case CURRENT_USER:
+          return {
+        ...state,
+        user: action.payload,
+        loggedIn: true
+      }
+          
           
       case REMOVE_CURRENT_SESSION:
 

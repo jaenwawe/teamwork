@@ -30,6 +30,8 @@ const AddSolution = () => {
         history.push(`/solutions/${challenge_id}`) 
         }
 
+        console.log("add a solution formmula")
+
     return (
       <div>
           <div className="form"> 

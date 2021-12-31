@@ -17,6 +17,9 @@ import AddSolution from './AddSolution'
 function Home (){
     
     // const user = useSelector((state) => state.users.user)
+    let challenge_id
+    if (challenge_id)
+     console.log(challenge_id)
 
     return (    
 
@@ -32,7 +35,7 @@ function Home (){
             <Route exact path="/challenge/add" component = {AddChallenge} />
             
             <Route path="/challenges/:id" component={Challenge}/>
-            <Route path="/solutions/:id" component= {SolutionsContainer}/>
+            <Route path="/solutions/:challenge_id" component= {SolutionsContainer}/>
             <Route path="/newSolution/:id" component= {AddSolution} />
 
             <Route path="/logout" component= {Logout} />
