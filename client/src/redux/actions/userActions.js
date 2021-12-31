@@ -29,7 +29,7 @@ import { useHistory} from "react-router-dom";
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ username, password })
     })
           .then(res => {
             if (res.ok) { 
@@ -60,28 +60,28 @@ export function logoutCurrentUser()
 }
 
 
-
-
-
-export function addUser(username,  password,  first_name, bio) {
-  return (dispatch) => {
+export function addUser(username,  password, first_name, bio) {
+   return (dispatch) => {
 
     fetch('/signup', {
-    method: 'POST',
-    headers: {
+      method: 'POST',
+      headers: {
         'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({username,  password,  username, first_name, bio}),
+      },
+      body: JSON.stringify({username, password, first_name, bio})
     })
-    .then(res => {
-      if (res.ok) { 
-        res.json().then(user =>{
-          dispatch({ type: "SET_USER", payload : user })
+      .then(res => {
+        if (res.ok) {
+          res.json().then(user => {
+            dispatch({ type: "SET_USER", payload:user },
+            getCurrentUserLogin() )
+
+          })
+        } else {
+          res.json().then(errors => {
+            console.error(errors)
+          })
+        }
       })
-     } else {
-      res.json().then(errors => 
-      console.error(errors))
-          }
-      })
-    }   
-}
+   }
+   }
