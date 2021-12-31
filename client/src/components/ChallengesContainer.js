@@ -9,9 +9,11 @@ function ChallengesContainer() {
   const dispatch = useDispatch()
   const challenges = useSelector((state) => state.challenges.challenges);
   
-  useEffect(()=>{
-    dispatch(setChallenges())  
-    },[])
+  // useEffect(()=>{
+  //   dispatch(setChallenges())  
+  //   },[])
+
+  useEffect(()=>{mapChallenges()},[challenges])
 
   const mapChallenges = () => {
     return challenges.map((challenge) => {

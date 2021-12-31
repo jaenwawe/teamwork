@@ -34,8 +34,7 @@ import { useHistory} from "react-router-dom";
           .then(res => {
             if (res.ok) { 
               res.json().then(user =>{
-                dispatch({ type: "SET_USER", payload:user },
-                getCurrentUserLogin() )
+                dispatch({ type: "SET_USER", payload:user })
             })
           }else {
             res.json().then(errors => 

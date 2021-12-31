@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:delete]
-  before_action :authorize, except: [:create]
+  before_action :authorize, except: [:create, :show]
 
   def index    
     render json: User.all
@@ -10,6 +9,17 @@ class UsersController < ApplicationController
     render json: @current_user, status: :ok
   end
 
+ 
+
+
+  # def show
+  #   user = User.find_by(id: session[:user_id])
+  #   if user
+  #     render json: user
+  #   else
+  #     render json: { error: "Not authorized" }, status: :unauthorized
+  #   end
+  # end
 
   def create
     new_user = User.new(user_params)
@@ -36,10 +46,4 @@ private
     @user = User.find(params[:id])
   end
 
-  def authorize_user
-    @event.user == current_user
-    if !user_can_modify
-      render json: { error: "You don't have permission to perform that action" }, status: :forbidden
-    end
-  end
 end

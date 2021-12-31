@@ -12,9 +12,11 @@ const history = useHistory()
 const challenge_id = useParams().id
 
 
-useEffect(()=>{
-  dispatch(getSolutions())  
-  },[])
+// useEffect(()=>{
+//   dispatch(getSolutions())  
+//   },[])
+
+useEffect(()=>{mapSolutions()},[solutionArr])
 
   const mapSolutions = () => {
     
