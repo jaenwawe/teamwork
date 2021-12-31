@@ -14,12 +14,13 @@ import { setChallenges} from "../redux/actions/challengeActions"
   const challenges = useSelector((state) => state.challenges);
   const [title, setTitle] = useState('')
   const [question, setQuestion] = useState('')
-  const [photo_url, setPhotoUrl] = useState('')
+//   const [photo_url, setPhotoUrl] = useState('')
 
   const handleSubmit = (e) => 
   {        
         e.preventDefault()
-        dispatch(addChallenge(title, question, photo_url)) 
+        // dispatch(addChallenge(title, question, photo_url)) 
+        dispatch(addChallenge(title, question)) 
         dispatch(setChallenges()) 
         history.push('/challenges')
     
@@ -54,7 +55,7 @@ import { setChallenges} from "../redux/actions/challengeActions"
                               </label>
                           </div>
 
-                          <div className="mb-3" >
+                          {/* <div className="mb-3" >
                               <label className="form-label">photo_url
                                   <input 
                                       type="photo_url" 
@@ -63,7 +64,7 @@ import { setChallenges} from "../redux/actions/challengeActions"
                                       onChange={(e) => setPhotoUrl(e.target.value)}>
                                   </input>
                               </label>
-                          </div>
+                          </div> */}
   
                           <button type="submit" className="btn btn-primary">Submit</button>
               </form>   

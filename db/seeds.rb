@@ -1,3 +1,7 @@
+User.destroy_all
+Challenge.destroy_all
+Solution.destroy_all
+
 
 
 puts "Seed Users"
@@ -5,9 +9,7 @@ puts "Seed Users"
 jil = User.create!(
     username: "ologn",
     password: "123abc",
-    email: "candy@candy.com",
     first_name: "candy",
-    avatar_url: "https://bit.ly/326tkhU",
     bio: "Super Nerd, runs O N(LogN) speed, and eats at O(1) speed.  Let's get started!"
 )
 
@@ -15,9 +17,7 @@ jil = User.create!(
 candy = User.create!(
     username: "nsquared",
     password: "123abc",
-    email: "candy@gmail.com",
     first_name: "Candy",
-    avatar_url: "https://bit.ly/3EVQ8j4",
     bio: "Super Nerd, runs O N(LogN) speed, and eats at O(1) speed.  Let's get started!"
 )
 
@@ -25,9 +25,7 @@ candy = User.create!(
 pop = User.create!(
     username: "popsickle",
     password: "123abc",
-    email: "pop@gmail.com",
     first_name: "Judeo",
-    avatar_url: "https://bitly.com/3DZdIdm",
     bio: "Geek squad , types, naps, listens to pop music.  I'm ready!"
 )
 puts "Finished Seeding  Users"
@@ -81,7 +79,7 @@ Solution.create!(
     user_id: candy.id,
     challenge_id: popChallenge.id,
     explaination: "I'm still working on it.  The tricky part is that the input would look like the top array, and the second array should be asc sorted",
-    photo_url: "https://bit.ly/3maxcWp"
+
 )
 
 
@@ -94,7 +92,7 @@ Solution.create!(
 )
 
 Solution.create!(
-    user_id: jill.id,
+    user_id: jil.id,
     challenge_id: vagueChallenge.id,
     questions: "Wow, you are going to spend the first 10 minutes, if pros/cons are based on time.  Then you need to know both.  Ask about for atleast three sample inputs, each one may be different"
 )

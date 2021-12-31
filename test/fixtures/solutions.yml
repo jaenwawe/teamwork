@@ -3,7 +3,6 @@
 one:
   user_id: 1
   challenge_id: 1
-  photo_url: MyString
   explaination: MyString
   hints: MyString
   questions: MyString
@@ -11,7 +10,6 @@ one:
 two:
   user_id: 1
   challenge_id: 1
-  photo_url: MyString
   explaination: MyString
   hints: MyString
   questions: MyString

@@ -20,12 +20,13 @@ ActiveRecord::Schema.define(version: 2021_12_21_065831) do
     t.string "question"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    
+    t.integer "votes"
   end
 
   create_table "solutions", force: :cascade do |t|
     t.integer "user_id"
     t.integer "challenge_id"
+  
     t.string "explaination"
     t.string "hints"
     t.string "questions"
@@ -36,7 +37,6 @@ ActiveRecord::Schema.define(version: 2021_12_21_065831) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
-    t.string "email"
     t.string "first_name"
     t.text "bio"
     t.datetime "created_at", precision: 6, null: false

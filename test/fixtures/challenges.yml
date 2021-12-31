@@ -3,9 +3,9 @@
 one:
   title: MyString
   question: MyString
-  photo_url: MyString
+  
 
 two:
   title: MyString
   question: MyString
-  photo_url: MyString
+

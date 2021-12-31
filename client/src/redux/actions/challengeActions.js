@@ -45,7 +45,7 @@ export function getCurrentChallenge() {
 
 
 
-    export function addChallenge(title, question, photo_url)
+    export function addChallenge(title, question)
     { 
         return (dispatch) => {
         dispatch({ type: "ADDING_CHALLENGE" });
@@ -55,7 +55,7 @@ export function getCurrentChallenge() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({title, question,  photo_url}),
+          body: JSON.stringify({title, question}),
         })
               .then(res => {
                 if (res.ok) { 
