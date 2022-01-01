@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:delete]
-  before_action :authorize, except: [:create]
+
 
   def index    
     render json: User.all
@@ -25,6 +24,8 @@ class UsersController < ApplicationController
     end
   end
 
+
+
       
 private
 
@@ -35,19 +36,11 @@ private
   end
 
   def user_params
-    # params.permit(:id,:username, :password, :first_name, :email, :bio, :avatar_url)
-    params.permit(:id,:username, :password, :first_name, :bio)
+    params.permit(:username, :password, :first_name, :bio)
   end
 
   def set_user
     @user = User.find(params[:id])
   end
-
-  def authorize_user
-    @event.user == current_user
-    if !user_can_modify
-      render json: { error: "You don't have permission to perform that action" }, status: :forbidden
-  end
-end
 
 end

@@ -9,7 +9,8 @@ import { useHistory} from "react-router-dom";
             .then(res => {
               if (res.ok) { 
                 res.json().then(user =>{
-                dispatch({ type: "CURRENT_USER", payload: user })
+                // dispatch({ type: "CURRENT_USER", payload: user })
+                getCurrentUserLogin() 
               })
               } else {
               res.json().then(errors => 
@@ -30,6 +31,7 @@ import { useHistory} from "react-router-dom";
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ username, password })
+      
     })
           .then(res => {
             if (res.ok) { 

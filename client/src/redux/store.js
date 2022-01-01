@@ -1,5 +1,6 @@
 import React from 'react'
-import { createStore, applyMiddleware } from "redux";
+// import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, compose } from 'redux';
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunkMiddleware from "redux-thunk";
 
