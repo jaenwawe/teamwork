@@ -1,4 +1,5 @@
 class SolutionsController < ApplicationController
+  before_action :authorize
 
   def index    
     render json: Solution.all
@@ -21,5 +22,8 @@ private
 
   def authorize
     @current_user = User.find_by_id(session[:user_id])
+
+    render json: { errors: ["Not authorized"] }, status: :unauthorized unless @current_user
   end
+
 end
