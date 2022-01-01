@@ -8,7 +8,7 @@ function Challenge ({key, challenge}){
       <div className="card">
         <h2>Name: {challenge.title}</h2>
         <h2>{challenge.question}</h2>
-            <img src={challenge.image_url} alt={challenge.title}></img>
+            {/* <img src={challenge.image_url} alt={challenge.title}></img> */}
        
         <br />
         <button

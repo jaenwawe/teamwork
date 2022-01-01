@@ -1,4 +1,5 @@
 class SolutionsController < ApplicationController
+  before_action :authorize
 
   def index    
     render json: Solution.all
@@ -16,10 +17,13 @@ class SolutionsController < ApplicationController
 private
 
   def solution_params
-    params.permit(:user_id, :challenge_id, :photo_url, :explaination, :hints, :questions)
+    params.permit(:user_id, :challenge_id, :explaination, :hints, :questions)
   end
 
   def authorize
     @current_user = User.find_by_id(session[:user_id])
+
+    render json: { errors: ["Not authorized"] }, status: :unauthorized unless @current_user
   end
+
 end

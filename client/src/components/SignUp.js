@@ -16,7 +16,8 @@ const dispatch = useDispatch()
 
     function signUpSubmit(e){
         e.preventDefault()
-        dispatch(addUser(username, password, email, first_name, bio)  
+        // dispatch(addUser(username, password, email, first_name, bio)  
+        dispatch(addUser(username, password, first_name, bio)  
         dispatch(getSolutions()) 
         dispatch(setChallenges()) 
     }
@@ -26,7 +27,7 @@ const dispatch = useDispatch()
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const [email, setEmail] = useState('')
+    // const [email, setEmail] = useState('')
     const [first_name, setFirstName] = useState('')
     const [bio, setBio] = useState('')
 
@@ -59,17 +60,6 @@ return (
                             </label>
                         </div>
 
-                        <div className="mb-3" >
-                            <label className="form-label">Email address 
-                                <input 
-                                    type="email" 
-                                    name="email" 
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}>
-                                </input>
-                            </label>
-                        </div>
-
                         <div className="mb-3">
                             <label  className="form-label">Password
                                 <input 
@@ -82,7 +72,7 @@ return (
                         </div>
                 
                         <div className="mb-3" >
-                            <label className="form-label">Username
+                            <label className="form-label">Bio
                                 <input 
                                     type="" 
                                     name="bio" 
@@ -91,6 +81,19 @@ return (
                                 </input>
                             </label>
                         </div>
+
+
+{/* 
+                        <div className="mb-3" >
+                            <label className="form-label">Email address 
+                                <input 
+                                    type="email" 
+                                    name="email" 
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}>
+                                </input>
+                            </label>
+                        </div> */}
 
                         <button type="submit" className="btn btn-primary">Submit</button>
             </form>   

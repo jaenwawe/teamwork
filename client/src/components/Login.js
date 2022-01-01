@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { useSelector, useDispatch} from "react-redux"; 
 import ReactDom from "react-dom";
+import Form from 'react-bootstrap/Form'
 
 import { setChallenges} from "../redux/actions/challengeActions"
 import { getSolutions } from "../redux/actions/solutionActions"
@@ -16,7 +17,7 @@ function Login() {
 
 const [username, setUsername] = useState('')
 const [password, setPassword] = useState('')
-const [email, setEmail] = useState('')
+// const [email, setEmail] = useState('')
 const [first_name, setFirstName] = useState('')
 const [bio, setBio] = useState('')
 const [isSignedUp, setIsSignedUp] = useState(true)
@@ -28,14 +29,15 @@ const dispatch = useDispatch()
 
     function handleSubmit(e){
         e.preventDefault()
-        dispatch(loginCurrentUser(email, password) ) 
+        dispatch(loginCurrentUser(username, password) ) 
         dispatch(getSolutions()) 
         dispatch(setChallenges()) 
     }
 
     function signUpSubmit(e){
         e.preventDefault()
-        dispatch(addUser(username, password, email, first_name, bio))  
+        // dispatch(addUser(username, password, email, first_name, bio))  
+        dispatch(addUser(username, password, first_name, bio))  
         dispatch(getSolutions()) 
         dispatch(setChallenges()) 
     }
@@ -46,16 +48,16 @@ const dispatch = useDispatch()
 
             <h1>Login </h1>
 
-            <h5> Already a member? Enter your email address and password to login</h5>
+            <h5> Already a member? Enter your username and password to login</h5>
             <form  onSubmit={handleSubmit}>
                                 
                         <div className="mb-3" >
-                            <label className="form-label">Email address 
+                            <label className="form-label">Username
                                 <input 
-                                    type="email" 
-                                    name="email" 
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}>
+                                    type="username" 
+                                    name="username" 
+                                    value={username}
+                                    onChange={(e) => setUsername(e.target.value)}>
                                 </input>
                             </label>
                         </div>
@@ -83,28 +85,28 @@ let signup =
     <form  onSubmit={signUpSubmit}>
 
         <div className="mb-3" >
-                        <label className="form-label">First Name
-                            <input 
-                                type="first_name" 
-                                name="first_name" 
-                                value={first_name}
-                                onChange={(e) => setFirstName(e.target.value)}>
-                            </input>
-                        </label>
-                    </div>
+            <label className="form-label">First Name
+                <input 
+                    type="first_name" 
+                    name="first_name" 
+                    value={first_name}
+                    onChange={(e) => setFirstName(e.target.value)}>
+                </input>
+            </label>
+        </div>
 
         <div className="mb-3" >
-                        <label className="form-label">Username
-                            <input 
-                                type="username" 
-                                name="username" 
-                                value={username}
-                                onChange={(e) => setUsername(e.target.value)}>
-                            </input>
-                        </label>
-                    </div>
+            <label className="form-label">Username
+                <input 
+                    type="username" 
+                    name="username" 
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}>
+                </input>
+            </label>
+        </div>
 
-        <div className="mb-3" >
+        {/* <div className="mb-3" >
             <label className="form-label">Email address 
                 <input 
                     type="email" 
@@ -113,7 +115,7 @@ let signup =
                     onChange={(e) => setEmail(e.target.value)}>
                 </input>
             </label>
-        </div>
+        </div> */}
 
         <div className="mb-3">
             <label  className="form-label">Password
@@ -126,7 +128,7 @@ let signup =
             </label>
         </div>
         
-        <div className="mb-3" >
+        {/* <div className="mb-3" >
             <label className="form-label">Username
                 <input 
                     type="" 
@@ -135,7 +137,7 @@ let signup =
                     onChange={(e) => setBio(e.target.value)}>
                 </input>
             </label>
-        </div>
+        </div> */}
         <button type="submit" className="btn btn-primary">Submit</button>
     </form>   
 </div> 

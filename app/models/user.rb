@@ -6,8 +6,8 @@ class User < ApplicationRecord
 
 
     validates :username, uniqueness: { case_sensitive: false }
-    validates :email, presence: true
-    validates :password_digest, presence: true
+     validates :password_digest, presence: true
+
 
 end
 

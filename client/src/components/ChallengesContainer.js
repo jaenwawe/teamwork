@@ -13,6 +13,8 @@ function ChallengesContainer() {
     dispatch(setChallenges())  
     },[])
 
+  // useEffect(()=>{mapChallenges()},[challenges])
+
   const mapChallenges = () => {
     return challenges.map((challenge) => {
       return (

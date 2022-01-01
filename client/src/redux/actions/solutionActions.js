@@ -22,7 +22,7 @@ export function getSolutions()
 
 
 
-    export function addSolution(user_id, challenge_id, photo_url, explaination, hints, questions) {
+    export function addSolution(user_id, challenge_id, explaination, hints, questions) {
       return (dispatch) => {
    
         fetch('/solutions', {
@@ -30,7 +30,7 @@ export function getSolutions()
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({user_id, challenge_id, photo_url, explaination, hints, questions}),
+        body: JSON.stringify({user_id, challenge_id, explaination, hints, questions}),
         })
         .then(res => {
           if (res.ok) { 

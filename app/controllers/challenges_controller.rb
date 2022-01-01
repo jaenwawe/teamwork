@@ -1,4 +1,6 @@
 class ChallengesController < ApplicationController
+  before_action :authorize
+
     def index    
         render json: Challenge.all
       end
@@ -24,7 +26,7 @@ def create
   end
 
   def challenge_params
-    params.permit(:title, :question, :photo_url)
+    params.permit(:title, :question)
   end
     
 end

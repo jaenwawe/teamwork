@@ -20,15 +20,18 @@ const AddSolution = () => {
     const [explaination, setExplaination] = useState('')
     const [hints, setHints] = useState('')
     const [questions, setQuestion] = useState('')
-    const [photo_url, setPhotoUrl] = useState('')
+    // const [photo_url, setPhotoUrl] = useState('')
 
     const handleSubmit = (e) => 
     {        
         e.preventDefault()
-        dispatch(addSolution(user_id, challenge_id, photo_url, explaination, hints, questions)) 
+        // dispatch(addSolution(user_id, challenge_id, photo_url, explaination, hints, questions)) 
+        dispatch(addSolution(user_id, challenge_id, explaination, hints, questions)) 
         dispatch(getSolutions()) 
         history.push(`/solutions/${challenge_id}`) 
         }
+
+        console.log("add a solution formmula")
 
     return (
       <div>
@@ -70,7 +73,7 @@ const AddSolution = () => {
                               </label>
                           </div>
 
-                          <div className="mb-3" >
+                          {/* <div className="mb-3" >
                               <label className="form-label">photo_url
                                   <input 
                                       type="photo_url" 
@@ -79,7 +82,7 @@ const AddSolution = () => {
                                       onChange={(e) => setPhotoUrl(e.target.value)}>
                                   </input>
                               </label>
-                          </div>
+                          </div> */}
   
                           <button type="submit" className="btn btn-primary">Submit</button>
               </form>   

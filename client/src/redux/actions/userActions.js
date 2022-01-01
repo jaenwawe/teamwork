@@ -9,7 +9,8 @@ import { useHistory} from "react-router-dom";
             .then(res => {
               if (res.ok) { 
                 res.json().then(user =>{
-                dispatch({ type: "CURRENT_USER", payload: user })
+                // dispatch({ type: "CURRENT_USER", payload: user })
+                getCurrentUserLogin() 
               })
               } else {
               res.json().then(errors => 
@@ -19,7 +20,7 @@ import { useHistory} from "react-router-dom";
           }
         } 
 
-  export function loginCurrentUser(email, password)
+  export function loginCurrentUser(username, password)
   {
     return (dispatch) => {
     dispatch({ type: "LOADING_USER" });
@@ -29,7 +30,8 @@ import { useHistory} from "react-router-dom";
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ username, password })
+      
     })
           .then(res => {
             if (res.ok) { 
@@ -60,28 +62,28 @@ export function logoutCurrentUser()
 }
 
 
-
-
-
-export function addUser(username,  password,  email, first_name, bio) {
-  return (dispatch) => {
+export function addUser(username,  password, first_name, bio) {
+   return (dispatch) => {
 
     fetch('/signup', {
-    method: 'POST',
-    headers: {
+      method: 'POST',
+      headers: {
         'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({username,  password,  email, first_name, bio}),
+      },
+      body: JSON.stringify({username, password, first_name, bio})
     })
-    .then(res => {
-      if (res.ok) { 
-        res.json().then(user =>{
-          dispatch({ type: "SET_USER", payload : user })
+      .then(res => {
+        if (res.ok) {
+          res.json().then(user => {
+            dispatch({ type: "SET_USER", payload:user },
+            getCurrentUserLogin() )
+
+          })
+        } else {
+          res.json().then(errors => {
+            console.error(errors)
+          })
+        }
       })
-     } else {
-      res.json().then(errors => 
-      console.error(errors))
-          }
-      })
-    }   
-}
+   }
+   }
