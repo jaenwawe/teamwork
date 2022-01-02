@@ -2,7 +2,7 @@ import {useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory,useParams } from "react-router-dom";
  import Solution from "/Users/jaenwawe/alpha/teamwork/client/src/components/Solution";
- import {getSolutions} from "../redux/actions/solutionActions";
+ import {setSolutions} from "../redux/actions/solutionActions"
 
 function SolutionsContainer(){  
 const solutionArr = useSelector((state) => state.solutions.solutions)
@@ -12,11 +12,11 @@ const history = useHistory()
 const {challenge_id} = useParams()
 
 
-// useEffect(()=>{
-//   dispatch(getSolutions())  
-//   },[])
+useEffect(()=>{
+  dispatch(setSolutions())  
+  },[])
 
-useEffect(()=>{mapSolutions()},[solutionArr])
+// useEffect(()=>{mapSolutions()},[solutionArr])
 
   const mapSolutions = () => {
     

@@ -4,7 +4,7 @@ import ReactDom from "react-dom";
 import Form from 'react-bootstrap/Form'
 
 import { setChallenges} from "../redux/actions/challengeActions"
-import { getSolutions } from "../redux/actions/solutionActions"
+import { setSolutions } from "../redux/actions/solutionActions"
 
 import { addUser} from "../redux/actions/userActions";
 import { loginCurrentUser} from "../redux/actions/userActions";
@@ -30,7 +30,7 @@ const dispatch = useDispatch()
     function handleSubmit(e){
         e.preventDefault()
         dispatch(loginCurrentUser(username, password) ) 
-        dispatch(getSolutions()) 
+        dispatch(setSolutions()) 
         dispatch(setChallenges()) 
     }
 
@@ -38,7 +38,7 @@ const dispatch = useDispatch()
         e.preventDefault()
         // dispatch(addUser(username, password, email, first_name, bio))  
         dispatch(addUser(username, password, first_name, bio))  
-        dispatch(getSolutions()) 
+        dispatch(setSolutions()) 
         dispatch(setChallenges()) 
     }
 

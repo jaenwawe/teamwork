@@ -6,7 +6,7 @@ import { useSelector, useDispatch} from "react-redux";
 import Login from './Login'
 import Home from './Home'
 import { setChallenges } from "../redux/actions/challengeActions"
-import { getSolutions } from "../redux/actions/solutionActions"
+import { setSolutions } from "../redux/actions/solutionActions"
 
 function App(){
   const dispatch = useDispatch()
@@ -18,7 +18,7 @@ function App(){
         response.json().then((current) => 
         {
           dispatch({ type: "CURRENT_USER", payload: current })
-          dispatch(getSolutions()) 
+          dispatch(setSolutions()) 
           dispatch(setChallenges()) 
           
         });
