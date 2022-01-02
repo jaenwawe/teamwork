@@ -3,14 +3,13 @@ import { useHistory} from "react-router-dom";
 
   export function getCurrentUserLogin() {
     return (dispatch) => {
-      dispatch({ type: "CURRENT_USER"})
     
         fetch("/me")
             .then(res => {
               if (res.ok) { 
                 res.json().then(user =>{
-                // dispatch({ type: "CURRENT_USER", payload: user })
-                getCurrentUserLogin() 
+                dispatch({ type: "CURRENT_USER", payload: user })
+      
               })
               } else {
               res.json().then(errors => 
@@ -46,7 +45,6 @@ import { useHistory} from "react-router-dom";
       })
     } 
   }
-
 
 export function logoutCurrentUser()
 {  
