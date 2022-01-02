@@ -80,7 +80,7 @@ const dispatch = useDispatch()
 
 let signup =
 <div className="form"> 
-    <h1>Signup Here </h1>
+    <h1>Signup</h1>
     <form  onSubmit={signUpSubmit}>
 
         <div className="mb-3" >
