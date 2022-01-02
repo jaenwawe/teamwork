@@ -16,7 +16,6 @@ const dispatch = useDispatch()
 
     function signUpSubmit(e){
         e.preventDefault()
-        // dispatch(addUser(username, password, email, first_name, bio)  
         dispatch(addUser(username, password, first_name, bio)  
         dispatch(getSolutions()) 
         dispatch(setChallenges()) 
@@ -27,7 +26,6 @@ const dispatch = useDispatch()
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    // const [email, setEmail] = useState('')
     const [first_name, setFirstName] = useState('')
     const [bio, setBio] = useState('')
 
@@ -35,7 +33,7 @@ const dispatch = useDispatch()
 return (
     <div>
         <div className="form"> 
-            <h1>Signup Here </h1>
+            <h1>Sign Up</h1>
             <form  onSubmit={signUpSubmit}>
 
             <div className="mb-3" >
@@ -74,26 +72,13 @@ return (
                         <div className="mb-3" >
                             <label className="form-label">Bio
                                 <input 
-                                    type="" 
+                                    type="text" 
                                     name="bio" 
                                     value={bio}
                                     onChange={(e) => setBio(e.target.value)}>
                                 </input>
                             </label>
                         </div>
-
-
-{/* 
-                        <div className="mb-3" >
-                            <label className="form-label">Email address 
-                                <input 
-                                    type="email" 
-                                    name="email" 
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}>
-                                </input>
-                            </label>
-                        </div> */}
 
                         <button type="submit" className="btn btn-primary">Submit</button>
             </form>   

@@ -27,16 +27,15 @@ function App(){
   }, []);
   const loggedIn = useSelector((state) => state.users.loggedIn)
 
-      const xmas = (!loggedIn      
+      const enter = (!loggedIn      
         ? <Route  path="/"  component= {Login}/>
         : <Route  path="/" component= {Home}/>)
 
     return (
       <div>
-        <div>App</div>
-   
+     
         <Switch>
-        {xmas}
+        {enter}
          </Switch> 
          
       
