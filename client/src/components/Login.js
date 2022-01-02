@@ -116,6 +116,18 @@ let signup =
                 </input>
             </label>
         </div>
+
+        <div className="mb-3" >
+                <label className="form-label">Bio
+                    <input 
+                        type="text" 
+                        name="bio" 
+                        value={bio}
+                        onChange={(e) => setBio(e.target.value)}>
+                    </input>
+                </label>
+             </div>
+
         
    
         <button type="submit" className="btn btn-primary">Submit</button>
@@ -128,7 +140,7 @@ return (
     <div>
         {(!isSignedUp ? signInOrSignUp = "Login" : signInOrSignUp = "Signup")}
             
-        <button onClick={()=>setIsSignedUp(!isSignedUp)}> {signInOrSignUp} </button>
+        <button onClick={()=>setIsSignedUp(!isSignedUp)} className="status">  {signInOrSignUp} </button>
                         
         {(isSignedUp ? login : signup)}
                 
