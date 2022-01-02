@@ -17,7 +17,7 @@ function Login() {
 
 const [username, setUsername] = useState('')
 const [password, setPassword] = useState('')
-// const [email, setEmail] = useState('')
+
 const [first_name, setFirstName] = useState('')
 const [bio, setBio] = useState('')
 const [isSignedUp, setIsSignedUp] = useState(true)
@@ -36,7 +36,6 @@ const dispatch = useDispatch()
 
     function signUpSubmit(e){
         e.preventDefault()
-        // dispatch(addUser(username, password, email, first_name, bio))  
         dispatch(addUser(username, password, first_name, bio))  
         dispatch(setSolutions()) 
         dispatch(setChallenges()) 
@@ -106,16 +105,6 @@ let signup =
             </label>
         </div>
 
-        {/* <div className="mb-3" >
-            <label className="form-label">Email address 
-                <input 
-                    type="email" 
-                    name="email" 
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}>
-                </input>
-            </label>
-        </div> */}
 
         <div className="mb-3">
             <label  className="form-label">Password
@@ -128,16 +117,7 @@ let signup =
             </label>
         </div>
         
-        {/* <div className="mb-3" >
-            <label className="form-label">Username
-                <input 
-                    type="" 
-                    name="bio" 
-                    value={bio}
-                    onChange={(e) => setBio(e.target.value)}>
-                </input>
-            </label>
-        </div> */}
+   
         <button type="submit" className="btn btn-primary">Submit</button>
     </form>   
 </div> 

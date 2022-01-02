@@ -5,6 +5,10 @@ import { useHistory,useParams } from "react-router-dom";
  import {setSolutions} from "../redux/actions/solutionActions"
 
 function SolutionsContainer(){  
+useEffect(()=>{
+  dispatch(setSolutions())  
+  },[])
+
 const solutionArr = useSelector((state) => state.solutions.solutions)
 const dispatch = useDispatch()
 
@@ -12,14 +16,7 @@ const history = useHistory()
 const {challenge_id} = useParams()
 
 
-useEffect(()=>{
-  dispatch(setSolutions())  
-  },[])
-
-// useEffect(()=>{mapSolutions()},[solutionArr])
-
-  const mapSolutions = () => {
-    
+const mapSolutions = () => {    
     return solutionArr.map((solution) => {
       return (
       (solution.challenge_id == challenge_id 
