@@ -138,9 +138,9 @@ let signup =
     
 return (
     <div>
-        {(!isSignedUp ? signInOrSignUp = "Login" : signInOrSignUp = "Signup")}
+      
             
-        <button onClick={()=>setIsSignedUp(!isSignedUp)} className="status">  {signInOrSignUp} </button>
+        <button onClick={()=>setIsSignedUp(!isSignedUp)} className="status">    {(!isSignedUp ? signInOrSignUp = "Login" : signInOrSignUp = "Signup")} </button>
                         
         {(isSignedUp ? login : signup)}
                 

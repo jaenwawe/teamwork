@@ -17,6 +17,7 @@ class SolutionsController < ApplicationController
 private
 
   def solution_params
+    # params.require(:solution).permit(the rest)
     params.permit(:user_id, :challenge_id, :explaination, :hints, :questions)
   end
 

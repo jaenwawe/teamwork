@@ -68,6 +68,7 @@ export function addUser(username,  password, first_name, bio) {
       headers: {
         'Content-Type': 'application/json'
       },
+      // if I do params required (keys the body changes )body: JSON.stringify(user:{username, password, first_name, bio})
       body: JSON.stringify({username, password, first_name, bio})
     })
       .then(res => {
