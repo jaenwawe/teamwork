@@ -1,5 +1,6 @@
 import ReactDOM from 'react-dom';
 import { SET_CHALLENGES} from "../actionTypes";
+import { SET_CHALLENGE} from "../actionTypes";
 import {CURRENT_CHALLENGE } from "../actionTypes";
 
 
@@ -17,6 +18,9 @@ export function challengesReducer(state = initialChallengesState, action) {
         challenges: action.payload,
         current_challenge: {}
       }
+      case SET_CHALLENGE:
+        return state;
+      
 
       case CURRENT_CHALLENGE:
         return {

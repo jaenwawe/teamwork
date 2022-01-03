@@ -1,40 +1,33 @@
 import React from "react";
 import ReactDom from "react-dom";
-import { useState} from 'react'
-
-import { useHistory, useParams } from 'react-router-dom'
 import { useSelector, useDispatch} from "react-redux"; 
+import { useState,useEffect } from 'react'
+import { useHistory, useParams } from 'react-router-dom'
 
-import { addSolution, getSolutions} from "../redux/actions/solutionActions"
-import {getCurrentChallenge} from "../redux/actions/challengeActions"
+import { addSolution, setSolutions} from "../redux/actions/solutionActions"
 
 const AddSolution = () => {
     const dispatch = useDispatch()
     const history = useHistory() 
-    const challenge_id = useParams().id 
-
+    const solutionsArr = useSelector((state) => state.solutions);
     const user_id = useSelector((state) => state.users.user.id)
-    let solutionsArr = useSelector((state) => state.solutions.solutions)
-
-
+    const challenge_id = useParams().id 
     const [explaination, setExplaination] = useState('')
     const [hints, setHints] = useState('')
     const [questions, setQuestion] = useState('')
-    // const [photo_url, setPhotoUrl] = useState('')
+
 
     const handleSubmit = (e) => 
     {        
         e.preventDefault()
-        // dispatch(addSolution(user_id, challenge_id, photo_url, explaination, hints, questions)) 
         dispatch(addSolution(user_id, challenge_id, explaination, hints, questions)) 
-        dispatch(getSolutions()) 
+        dispatch(setSolutions()) 
         history.push(`/solutions/${challenge_id}`) 
         }
 
-        console.log("add a solution formmula")
-
     return (
       <div>
+             {/* {console.error(errors)} */}
           <div className="form"> 
   
               <h5> What are your solutions, questions, or hints</h5>
@@ -72,17 +65,6 @@ const AddSolution = () => {
                                   </input>
                               </label>
                           </div>
-
-                          {/* <div className="mb-3" >
-                              <label className="form-label">photo_url
-                                  <input 
-                                      type="photo_url" 
-                                      name="photo_url" 
-                                      value={photo_url}
-                                      onChange={(e) => setPhotoUrl(e.target.value)}>
-                                  </input>
-                              </label>
-                          </div> */}
   
                           <button type="submit" className="btn btn-primary">Submit</button>
               </form>   

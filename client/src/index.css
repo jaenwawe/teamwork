@@ -11,3 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.status {
+  margin-top: 10px;
+  margin-right: 10px;
+  position:absolute; top:0; right:0;
+  }
+
+
+  .navbar{
+    padding-top: 10px;
+    margin-top: 0px;
+    min-height: 60px;
+    text-align: center;
+    background-color: rgb(48, 165, 165);
+  }
+
+  button {
+    position: relative;
+    background-color: #7a7ce9;
+    border: none;
+    border-radius: 5px;
+    height: 3rem;
+    width: max-content;
+    font-size: 18px;
+    justify-self: center;
+    margin-left: 40%;
+  }
