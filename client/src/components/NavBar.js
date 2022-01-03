@@ -11,14 +11,12 @@ function NavBar() {
 
     return (
         <div className="navbar">
-              <div>    
-            <Link to="/">Home</Link>
+              
             <Link to="/about">About</Link>
             <Link to="/challenge/add">Add a Challenge</Link>
             <Link to="/challenges">Challenges</Link>
-            </div>
-        
-                 <button onClick={() => history.push(`/logout`)} className="status"> Logout </button>
+            
+             <button onClick={() => history.push(`/logout`)} className="status"> Logout </button>
 
 
         </div>

@@ -27,7 +27,7 @@ import { setChallenges} from "../redux/actions/challengeActions"
       <div>
 
         {/* {console.error(errors)} */}
-          <div className="form"> 
+          <div className="add-form"> 
         
               <form  onSubmit={handleSubmit}>
                                   
@@ -53,7 +53,7 @@ import { setChallenges} from "../redux/actions/challengeActions"
                               </label>
                           </div>
   
-                          <button type="submit" className="btn btn-primary">Submit</button>
+                          <button type="submit" className="button-bottom">Submit</button>
               </form>   
           </div> 
       </div>
