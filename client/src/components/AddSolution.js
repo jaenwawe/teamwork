@@ -66,7 +66,7 @@ const AddSolution = () => {
                               </label>
                           </div>
   
-                          <button type="submit" className="btn btn-primary">Submit</button>
+                          <button type="submit" className="button-bottom">Submit</button>
               </form>   
           </div> 
       </div>

@@ -1,10 +1,15 @@
 body {
   margin: 0;
+  height: 100%;
+  padding-bottom: 25px;
+  background-color: #009ce659;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  bottom: 0;
+
 }
 
 code {
@@ -16,26 +21,114 @@ code {
 .status {
   margin-top: 10px;
   margin-right: 10px;
-  position:absolute; top:0; right:0;
+  position:absolute; 
+  top:0; 
+  right:0;
   }
 
 
-  .navbar{
-    padding-top: 10px;
-    margin-top: 0px;
-    min-height: 60px;
+  h1 {
+    line-height: 1;
+    font-family: serif;
     text-align: center;
-    background-color: rgb(48, 165, 165);
+  
   }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p {
+  color :rgb(30, 30, 80);
+  } 
+
+  .title
+{
+  color: blue;
+  text-align: center; 
+}
+
+  
+  .navbar{
+    display:flex;
+    justify-content: space-around;
+    /* z-index: 9999; */
+    height: 5%;
+  
+    align-self: center;
+
+    padding-top: 20px;
+    padding-bottom: 10px;
+    
+    overflow: hidden;
+    margin-top: 0px;
+    min-height: 30px;
+
+    background-color: rgb(48, 165, 165);
+    position: sticky;
+    top: 0; 
+    width: 100%; 
+    
+  }
+
+  .list-container{
+    height: 90%;
+    padding-bottom: 10px;
+    padding-left:  45px;
+    bottom: 0; 
+  }
+
+
 
   button {
-    position: relative;
-    background-color: #7a7ce9;
-    border: none;
-    border-radius: 5px;
+
     height: 3rem;
     width: max-content;
     font-size: 18px;
+
     justify-self: center;
-    margin-left: 40%;
+    position: relative;
+
+    border-radius: 5px;
+    background-color: #7a7ce9;
+
+    margin-left: 50%;
   }
+
+  
+  .button-bottom{
+    scroll-behavior: scroll;
+    position: fixed;
+    top: 200px;
+    margin-left: 1px;
+    margin-top: 50px;
+    background-color: rgb(48, 165, 165); 
+ 
+  }
+
+
+.add-form{
+margin: 0 auto;
+margin-top: 20%; 
+
+padding-bottom: 10px;
+
+width: 50%;
+display:block;
+
+
+}
+
+
+.container{
+  width: 70%;
+  margin: 0 auto;
+  height: 90%;
+  margin-top: 8%;
+  padding-bottom: 10px;
+  padding-left:  30px;
+  bottom: 0; 
+}
+
+.submit-button{}

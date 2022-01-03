@@ -6,10 +6,9 @@ function Challenge ({key, challenge}){
     const challenges = useSelector((state) => state.challenges.challenges);
     return (
       <div className="card">
-        <h2>Name: {challenge.title}</h2>
+        <h2 challengeName="title">{challenge.title}</h2>
         <h2>{challenge.question}</h2>
-            {/* <img src={challenge.image_url} alt={challenge.title}></img> */}
-       
+      
         <br />
         <button
           onClick={() => history.push(`/solutions/${challenge.id}`)

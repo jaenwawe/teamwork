@@ -7,13 +7,15 @@ import Challenge from "/Users/jaenwawe/alpha/teamwork/client/src/components/Chal
 
 function ChallengesContainer() {
   const dispatch = useDispatch()
-  const challenges = useSelector((state) => state.challenges.challenges);
   
   useEffect(()=>{
     dispatch(setChallenges())  
     },[])
 
-  // useEffect(()=>{mapChallenges()},[challenges])
+  const challenges = useSelector((state) => state.challenges.challenges);
+  
+ 
+
 
   const mapChallenges = () => {
     return challenges.map((challenge) => {

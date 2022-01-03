@@ -16,7 +16,6 @@ import AddSolution from './AddSolution'
 
 function Home (){
     
-    // const user = useSelector((state) => state.users.user)
     let challenge_id
     if (challenge_id)
      console.log(challenge_id)

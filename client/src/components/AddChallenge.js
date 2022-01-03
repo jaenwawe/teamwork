@@ -24,10 +24,8 @@ import { setChallenges} from "../redux/actions/challengeActions"
     }
 
     return (
-      <div>
-
-        {/* {console.error(errors)} */}
-          <div className="form"> 
+    
+          <div className="add-form"> 
         
               <form  onSubmit={handleSubmit}>
                                   
@@ -37,7 +35,7 @@ import { setChallenges} from "../redux/actions/challengeActions"
                                       type="title" 
                                       name="title" 
                                       value={title}
-                                      onChange={(e) => setTitle(e.target.value)}>
+                                      onChange={(e) => setTitle(e.target.value)} required> 
                                   </input>
                               </label>
                           </div>
@@ -48,15 +46,14 @@ import { setChallenges} from "../redux/actions/challengeActions"
                                       type="question" 
                                       name="question" 
                                       value={question}
-                                      onChange={(e) => setQuestion(e.target.value)}>    
+                                      onChange={(e) => setQuestion(e.target.value)} required>    
                                   </input>
                               </label>
                           </div>
   
-                          <button type="submit" className="btn btn-primary">Submit</button>
+                          <button type="submit" className="submit-button">Submit</button>
               </form>   
           </div> 
-      </div>
       )
   }
 

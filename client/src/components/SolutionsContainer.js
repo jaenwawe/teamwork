@@ -26,10 +26,10 @@ const mapSolutions = () => {
     })
   };
   return (
-    <div>
-        <button onClick={() => history.push(`/newSolution/${challenge_id}`)}> Add a solution </button>
+    <div className="list-container">
 
       <div className="container">{mapSolutions()}</div>
+      <button onClick={() => history.push(`/newSolution/${challenge_id}`)} className="button-bottom"> Add a solution </button>
     </div>
   );
 };
