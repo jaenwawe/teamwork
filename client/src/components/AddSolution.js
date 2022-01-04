@@ -4,6 +4,10 @@ import { useSelector, useDispatch} from "react-redux";
 import { useState,useEffect } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form'
+
+
 import { addSolution, setSolutions} from "../redux/actions/solutionActions"
 
 const AddSolution = () => {
@@ -13,63 +17,49 @@ const AddSolution = () => {
     const user_id = useSelector((state) => state.users.user.id)
     const challenge_id = useParams().id 
     const [explaination, setExplaination] = useState('')
-    const [hints, setHints] = useState('')
+    const [hint, setHint] = useState('')
     const [questions, setQuestion] = useState('')
 
 
     const handleSubmit = (e) => 
     {        
         e.preventDefault()
-        dispatch(addSolution(user_id, challenge_id, explaination, hints, questions)) 
+        dispatch(addSolution(user_id, challenge_id, explaination, hint, questions)) 
         dispatch(setSolutions()) 
         history.push(`/solutions/${challenge_id}`) 
-        }
+    }
 
     return (
-      <div>
-             {/* {console.error(errors)} */}
-          <div className="form"> 
-  
-              <h5> What are your solutions, questions, or hints</h5>
-              <form  onSubmit={handleSubmit}>
-                                  
-                          <div className="mb-3" >
-                              <label className="form-label">explaination
-                                  <input 
-                                      type="explaination" 
-                                      name="explaination" 
-                                      value={explaination} 
-                                      onChange={(e) =>  setExplaination(e.target.value)}>
-                                  </input>
-                              </label>
-                          </div>
+    <div className="add-form"> 
+          <h1>Add questions to clarify the challenge, hint, or the answer!</h1>
 
-                          <div className="mb-3" >
-                              <label className="form-label">hints
-                                  <input 
-                                      type="hints" 
-                                      name="hints" 
-                                      value={hints}
-                                      onChange={(e) =>  setHints(e.target.value)}>
-                                  </input>
-                              </label>
-                          </div>
-  
-                          <div className="mb-3">
-                              <label  className="form-label">question
-                                  <input 
-                                      type="questions" 
-                                      name="questions" 
-                                      value={questions}
-                                      onChange={(e) => setQuestion(e.target.value)}>    
-                                  </input>
-                              </label>
-                          </div>
-  
-                          <button type="submit" className="button-bottom">Submit</button>
-              </form>   
-          </div> 
-      </div>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group className="form-label" controlId="formBasicQuestions">
+                <Form.Label>Clarifying Questions</Form.Label>
+                <Form.Control type="questions" placeholder="Enter the clarifying question"  onChange={(e) => setQuestion(e.target.value)}/>
+                <br/>
+            </Form.Group>
+
+            <Form.Group className="form-label" controlId="formBasicHint">
+                <Form.Label>Hint</Form.Label>
+                <Form.Control type="hint" placeholder="Hint"  onChange={(e) => setHint(e.target.value)}/>
+            </Form.Group>
+            
+            <Form.Group className="explaination" controlId="formControlTextarea">
+                <Form.Label>Share your answer and explaination</Form.Label>
+                <Form.Control as="textarea" rows={3} onChange={(e) => setExplaination(e.target.value)}/>
+            </Form.Group>
+
+            
+    
+            
+                <Button className="radius button-color " variant="primary" type="submit">
+                    Submit
+                </Button>
+            </Form>
+        
+        </div> 
+        
       )
   }
 

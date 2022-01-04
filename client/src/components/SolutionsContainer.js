@@ -29,7 +29,7 @@ const mapSolutions = () => {
     <div className="list-container">
 
       <div className="container">{mapSolutions()}</div>
-      <button onClick={() => history.push(`/newSolution/${challenge_id}`)} className="button-bottom"> Add a solution </button>
+      <button onClick={() => history.push(`/newSolution/${challenge_id}`)} className="button-middle"> Add a solution </button>
     </div>
   );
 };

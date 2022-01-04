@@ -10,7 +10,7 @@ function NavBar() {
     const history = useHistory() 
 
     return (
-        <div className="navbar">
+        <div className="navbar a">
               
             <Link to="/about">About</Link>
             <Link to="/challenge/add">Add a Challenge</Link>

@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { useSelector, useDispatch} from "react-redux"; 
 import ReactDom from "react-dom";
+
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form'
 
@@ -64,8 +65,8 @@ const dispatch = useDispatch()
                     <Form.Control type="password" placeholder="Password"  onChange={(e) => setPassword(e.target.value)}/>
                 </Form.Group>
               
-                <Button variant="primary" type="submit">
-                    Submit
+                <Button className="radius button-color add" variant="primary" type="submit">
+                Submit
                 </Button>
             </Form>
         </div> 
@@ -104,7 +105,7 @@ let signup =
     <Form.Control as="textarea" rows={3} onChange={(e) => setBio(e.target.value)}/>
   </Form.Group>
   
-    <Button className="radius button-color " variant="primary" type="submit">
+    <Button className="radius button-color add" variant="primary" type="submit">
         Submit
     </Button>
 </Form>
