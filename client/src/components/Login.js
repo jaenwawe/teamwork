@@ -1,7 +1,9 @@
 import React, {useState} from "react";
 import { useSelector, useDispatch} from "react-redux"; 
 import ReactDom from "react-dom";
+import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form'
+
 
 import { setChallenges} from "../redux/actions/challengeActions"
 import { setSolutions } from "../redux/actions/solutionActions"
@@ -11,6 +13,9 @@ import { loginCurrentUser} from "../redux/actions/userActions";
 import { getCurrentUserLogin} from "../redux/actions/userActions";
 
 import { createBrowserHistory} from "history";
+
+
+
 
 
 function Login() {
@@ -48,39 +53,30 @@ const dispatch = useDispatch()
             <h1>Login </h1>
 
             <h5> Already a member? Enter your username and password to login</h5>
-            <form  onSubmit={handleSubmit}>
-                                
-                        <div className="mb-3" >
-                            <label className="form-label">Username
-                                <input 
-                                    type="username" 
-                                    name="username" 
-                                    value={username}
-                                    onChange={(e) => setUsername(e.target.value)}>
-                                </input>
-                            </label>
-                        </div>
+            <Form onSubmit={handleSubmit}>
+                <Form.Group className="mb-3" controlId="formBasicUsername">
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control type="username" placeholder="Enter username"  onChange={(e) => setUsername(e.target.value)}/>
+                <br/>
+                </Form.Group>
 
-                        <div className="mb-3">
-                            <label  className="form-label">Password
-                                <input 
-                                    type="password" 
-                                    name="password" 
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}>    
-                                </input>
-                            </label>
-                        </div>
-                
-                        <button type="submit" className="btn btn-primary">Submit</button>
-            </form>   
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control type="password" placeholder="Password"  onChange={(e) => setPassword(e.target.value)}/>
+                </Form.Group>
+              
+                <Button variant="primary" type="submit">
+                    Submit
+                </Button>
+            </Form>
+
         </div> 
 
 
 
 let signup =
 <div className="form"> 
-    <h1>Signup Here </h1>
+    <h1>Signup</h1>
     <form  onSubmit={signUpSubmit}>
 
         <div className="mb-3" >
@@ -131,20 +127,33 @@ let signup =
         
    
         <button type="submit" className="btn btn-primary">Submit</button>
+        
     </form>   
 </div> 
 
 
     
 return (
-    <div>
-      
-            
-        <button onClick={()=>setIsSignedUp(!isSignedUp)} className="status">    {(!isSignedUp ? signInOrSignUp = "Login" : signInOrSignUp = "Signup")} </button>
-                        
-        {(isSignedUp ? login : signup)}
-                
+   
+  
+<div>
+<div>
+ 
+    <div className="teamwork">TeamWork 
     </div>
+    
+        <button onClick={()=>setIsSignedUp(!isSignedUp)} className="status">    {(!isSignedUp ? signInOrSignUp = "Login" : signInOrSignUp = "Signup")} 
+        </button>
+                                
+      {(isSignedUp ? login : signup)}
+
+  
+        
+</div>
+
+</div>
+
+
     )
 }
 export default Login;
