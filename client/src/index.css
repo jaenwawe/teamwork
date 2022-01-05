@@ -46,7 +46,7 @@ h4,
 h5,
 span,
 p {
-color :blue;
+color :rgb(45, 12, 66);
 } 
 
 
@@ -158,7 +158,9 @@ color :blue;
   margin-top: 8%;
   padding: 10px;
   bottom: 0; 
+  background-color:#9092ee;
 }
+
 
 
 .motto{
@@ -197,10 +199,24 @@ color :blue;
 
 .alignright {
   padding: 20px;
+
 }
 
 .center{
-
   margin-left:  600px;;
+}
 
+
+
+.container-about{
+  width: 90%;
+  margin: 0 auto;
+  height: 90%;
+  margin-top: 10%;
+  padding: 10px;
+  bottom: 0; 
+
+}
+.middle{
+  justify-self: center;
 }

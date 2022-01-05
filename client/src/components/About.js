@@ -3,11 +3,24 @@ import ReactDom from "react-dom";
 
 function About() {
     return (
-        <div className="container">
-            <h2>TeamWork, each one teach one strategy for Data Structures and alorithms</h2>
-            <p>Add an algorithm</p>
-            <p>Add a solutioon</p>
-            <p>Please feel welcomed.  No one knows it all, but everyone has something to share.</p>    
+        <div className="container-about middle">
+            <h2 >A site for an each one teach one strategy for learning data structures and alorithmic challenges</h2>
+            <br/>
+            <h2>Here, we share while learning! </h2>
+            
+          
+            <br/>
+            <br/>
+            <br/>
+            <h2>Share challenges that you have seen</h2>
+            <br/>
+            <h2>Share your solution</h2>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+           
+            <h2> Please feel welcomed!  No one knows it all, BUT everyone has something to share!</h2>
     </div>
      
     );
