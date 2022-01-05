@@ -46,7 +46,7 @@ h4,
 h5,
 span,
 p {
-color :blue;
+color :rgb(45, 12, 66);
 } 
 
 
@@ -56,7 +56,21 @@ color :blue;
   text-align: center; 
 }
 
+
+.navbar-login{
+  z-index: 500;
+
+  background-color: rgb(82, 93, 155); 
+  position: fixed;
+  top: 0;
+  width: 100%;
   
+}
+
+.motto{
+  width: 100%;
+}
+
 .navbar{
   z-index: 500;
   overflow:scroll;
@@ -144,7 +158,21 @@ color :blue;
   margin-top: 8%;
   padding: 10px;
   bottom: 0; 
+  background-color:#9092ee;
 }
+
+
+
+.motto{
+  width: 100%;
+  margin-left: 25%;
+  height: 90%;
+  margin-top: 5%;
+  padding: 10px;
+
+}
+
+
 
 .radius{
   border-radius: 5px;
@@ -171,10 +199,24 @@ color :blue;
 
 .alignright {
   padding: 20px;
+
 }
 
 .center{
-
   margin-left:  600px;;
+}
 
+
+
+.container-about{
+  width: 90%;
+  margin: 0 auto;
+  height: 90%;
+  margin-top: 10%;
+  padding: 10px;
+  bottom: 0; 
+
+}
+.middle{
+  justify-self: center;
 }

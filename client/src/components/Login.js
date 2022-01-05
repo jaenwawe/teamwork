@@ -17,9 +17,6 @@ import LogInNavBar from "./LogInNavBar"
 import { createBrowserHistory} from "history";
 
 
-
-
-
 function Login() {
 
 const [username, setUserName] = useState('')
@@ -102,7 +99,6 @@ let signup =
 
     <Form.Group className="bio" controlId="formControlTextarea">
     <Form.Label>Share a little about yourself</Form.Label>
-    {/* <Form.Control as="bio" rows={3} onChange={(e) => setBio(e.target.value)}/> */}
     <Form.Control as="textarea" rows={3} onChange={(e) => setBio(e.target.value)}/>
   </Form.Group>
   
@@ -117,11 +113,9 @@ let signup =
     
 return (
 
-<div>
-     <LogInNavBar/>
-     <h3 className= "motto">Where each one teaches one with a algorithmic challenge or a path to its solution</h3>
-    {/* <div className="teamwork radius">TeamWork  */}
-
+<div >
+     <LogInNavBar />
+     <h2 className="motto">Where each one teaches one with a algorithmic challenge or a path to its solution</h2>
         <button onClick={()=>setIsSignedUp(!isSignedUp)} className="status">    {(!isSignedUp ? signInOrSignUp = "Login" : signInOrSignUp = "Signup")} 
         </button>
                                 
