@@ -1,7 +1,10 @@
 import React, {useState} from "react";
 import { useSelector, useDispatch} from "react-redux"; 
 import ReactDom from "react-dom";
+
+import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form'
+
 
 import { setChallenges} from "../redux/actions/challengeActions"
 import { setSolutions } from "../redux/actions/solutionActions"
@@ -13,9 +16,12 @@ import { getCurrentUserLogin} from "../redux/actions/userActions";
 import { createBrowserHistory} from "history";
 
 
+
+
+
 function Login() {
 
-const [username, setUsername] = useState('')
+const [username, setUserName] = useState('')
 const [password, setPassword] = useState('')
 
 const [first_name, setFirstName] = useState('')
@@ -43,108 +49,82 @@ const dispatch = useDispatch()
 
 
     let login = 
-    <div className="form"> 
+    <div className="add-form"> 
 
             <h1>Login </h1>
 
-            <h5> Already a member? Enter your username and password to login</h5>
-            <form  onSubmit={handleSubmit}>
-                                
-                        <div className="mb-3" >
-                            <label className="form-label">Username
-                                <input 
-                                    type="username" 
-                                    name="username" 
-                                    value={username}
-                                    onChange={(e) => setUsername(e.target.value)}>
-                                </input>
-                            </label>
-                        </div>
+            <Form onSubmit={handleSubmit}>
+                <Form.Group className="mb-3" controlId="formBasicUsername">
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control type="username" placeholder="Enter username"  onChange={(e) => setUserName(e.target.value)}/>
+                <br/>
+                </Form.Group>
 
-                        <div className="mb-3">
-                            <label  className="form-label">Password
-                                <input 
-                                    type="password" 
-                                    name="password" 
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}>    
-                                </input>
-                            </label>
-                        </div>
-                
-                        <button type="submit" className="btn btn-primary">Submit</button>
-            </form>   
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control type="password" placeholder="Password"  onChange={(e) => setPassword(e.target.value)}/>
+                </Form.Group>
+              
+                <Button className="radius button-color add" variant="primary" type="submit">
+                Submit
+                </Button>
+            </Form>
         </div> 
 
 
 
 let signup =
-<div className="form"> 
-    <h1>Signup Here </h1>
-    <form  onSubmit={signUpSubmit}>
+<div className="add-form"> 
 
-        <div className="mb-3" >
-            <label className="form-label">First Name
-                <input 
-                    type="first_name" 
-                    name="first_name" 
-                    value={first_name}
-                    onChange={(e) => setFirstName(e.target.value)}>
-                </input>
-            </label>
-        </div>
-
-        <div className="mb-3" >
-            <label className="form-label">Username
-                <input 
-                    type="username" 
-                    name="username" 
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}>
-                </input>
-            </label>
-        </div>
+<h1>Sign up</h1>
 
 
-        <div className="mb-3">
-            <label  className="form-label">Password
-                <input 
-                    type="password" 
-                    name="password" 
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}>    
-                </input>
-            </label>
-        </div>
+<Form onSubmit={signUpSubmit}>
 
-        <div className="mb-3" >
-                <label className="form-label">Bio
-                    <input 
-                        type="text" 
-                        name="bio" 
-                        value={bio}
-                        onChange={(e) => setBio(e.target.value)}>
-                    </input>
-                </label>
-             </div>
+<Form.Group className="mb-3" controlId="formBasicFirstName">
+        <Form.Label>First Name</Form.Label>
+        <Form.Control type="firstName" placeholder="Enter First Name"  onChange={(e) => setFirstName(e.target.value)}/>
+    <br/>
+    </Form.Group>
 
-        
-   
-        <button type="submit" className="btn btn-primary">Submit</button>
-    </form>   
+
+    <Form.Group className="mb-3" controlId="formBasicUserName">
+        <Form.Label>User Name</Form.Label>
+        <Form.Control type="userName" placeholder="Enter UserName"  onChange={(e) => setUserName(e.target.value)}/>
+    <br/>
+    </Form.Group>
+
+    <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Password</Form.Label>
+        <Form.Control type="password" placeholder="Password"  onChange={(e) => setPassword(e.target.value)}/>
+    </Form.Group>
+
+    <Form.Group className="bio" controlId="formControlTextarea">
+    <Form.Label>Share a little about yourself</Form.Label>
+    {/* <Form.Control as="bio" rows={3} onChange={(e) => setBio(e.target.value)}/> */}
+    <Form.Control as="textarea" rows={3} onChange={(e) => setBio(e.target.value)}/>
+  </Form.Group>
+  
+    <Button className="radius button-color add" variant="primary" type="submit">
+        Submit
+    </Button>
+</Form>
+
 </div> 
 
 
     
 return (
-    <div>
-      
-            
-        <button onClick={()=>setIsSignedUp(!isSignedUp)} className="status">    {(!isSignedUp ? signInOrSignUp = "Login" : signInOrSignUp = "Signup")} </button>
-                        
-        {(isSignedUp ? login : signup)}
-                
+
+<div>
+ 
+    <div className="teamwork radius">TeamWork 
     </div>
+        <button onClick={()=>setIsSignedUp(!isSignedUp)} className="status">    {(!isSignedUp ? signInOrSignUp = "Login" : signInOrSignUp = "Signup")} 
+        </button>
+                                
+      {(isSignedUp ? login : signup)}        
+</div>
     )
 }
 export default Login;

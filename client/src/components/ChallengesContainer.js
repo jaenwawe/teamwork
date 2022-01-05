@@ -15,8 +15,6 @@ function ChallengesContainer() {
   const challenges = useSelector((state) => state.challenges.challenges);
   
  
-
-
   const mapChallenges = () => {
     return challenges.map((challenge) => {
       return (
@@ -25,7 +23,7 @@ function ChallengesContainer() {
     })
   };
   return (
-    <div>
+  <div className="main">
       <div className="container">{mapChallenges()}</div>
     </div>
   );
