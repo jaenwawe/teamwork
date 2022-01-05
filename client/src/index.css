@@ -56,7 +56,21 @@ color :blue;
   text-align: center; 
 }
 
+
+.navbar-login{
+  z-index: 500;
+
+  background-color: rgb(82, 93, 155); 
+  position: fixed;
+  top: 0;
+  width: 100%;
   
+}
+
+.motto{
+  width: 100%;
+}
+
 .navbar{
   z-index: 500;
   overflow:scroll;
@@ -145,6 +159,18 @@ color :blue;
   padding: 10px;
   bottom: 0; 
 }
+
+
+.motto{
+  width: 100%;
+  margin-left: 25%;
+  height: 90%;
+  margin-top: 5%;
+  padding: 10px;
+
+}
+
+
 
 .radius{
   border-radius: 5px;

@@ -11,8 +11,8 @@ function LogInNavBar() {
 
     return (
 
-<div>
-    <div className="navbar teamwork radius">TeamWork </div>
+<div className="navbar-login">
+    <div className=" teamwork radius">TeamWork </div>
 
 </div>
     );
