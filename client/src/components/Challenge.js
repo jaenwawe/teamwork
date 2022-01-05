@@ -6,8 +6,8 @@ function Challenge ({key, challenge}){
     const challenges = useSelector((state) => state.challenges.challenges);
     return (
       <div className="card">
-        <h2 challengeName="title">{challenge.title}</h2>
-        <h2>{challenge.question}</h2>
+        <h2 className="middle">{challenge.title}</h2>
+        <h2 className="left">{challenge.question}</h2>
       
         <br />
         <button
