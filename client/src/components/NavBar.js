@@ -10,15 +10,16 @@ function NavBar() {
     const history = useHistory() 
 
     return (
-        <div className="navbar a">
-              
+    <div className="navbar">
+        <div>
+        <div className="teamwork radius">TeamWork </div>
+            <div className="a">              
             <Link to="/about">About</Link>
             <Link to="/challenge/add">Add a Challenge</Link>
-            <Link to="/challenges">Challenges</Link>
+            <Link to="/challenges">Challenges</Link></div>
             
-             <button onClick={() => history.push(`/logout`)} className="status"> Logout </button>
-
-
+             <button onClick={() => history.push(`/logout`)} className="a status"> Logout </button>
+        </div>
         </div>
     );
 }

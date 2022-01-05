@@ -12,6 +12,7 @@ import { setSolutions } from "../redux/actions/solutionActions"
 import { addUser} from "../redux/actions/userActions";
 import { loginCurrentUser} from "../redux/actions/userActions";
 import { getCurrentUserLogin} from "../redux/actions/userActions";
+import LogInNavBar from "./LogInNavBar"
 
 import { createBrowserHistory} from "history";
 
@@ -117,9 +118,10 @@ let signup =
 return (
 
 <div>
- 
-    <div className="teamwork radius">TeamWork 
-    </div>
+     <LogInNavBar/>
+     <h3 className= "motto">Where each one teaches one with a algorithmic challenge or a path to its solution</h3>
+    {/* <div className="teamwork radius">TeamWork  */}
+
         <button onClick={()=>setIsSignedUp(!isSignedUp)} className="status">    {(!isSignedUp ? signInOrSignUp = "Login" : signInOrSignUp = "Signup")} 
         </button>
                                 

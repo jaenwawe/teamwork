@@ -19,12 +19,16 @@ code {
 }
 
 .teamwork {
+  z-index: 999;
 
   font-family: "Helvetica Neue";
   font-size: 25px;
-  width: 300px;
+  width: 200px;
+  height: 50px;
   margin: auto;
+  padding: 7px;
   text-align: center;
+  border: 3px solid purple;
   background-color:#9092ee;
 }
 
@@ -45,19 +49,16 @@ p {
 color :blue;
 } 
 
-.left{
-  margin-left: 0; 
-}
+
 
 
 .middle{
-
   text-align: center; 
 }
 
   
 .navbar{
-  z-index: 9999;
+  z-index: 500;
   overflow:scroll;
   background-color: rgb(82, 93, 155); 
   position: fixed;
@@ -85,7 +86,6 @@ color :blue;
   button {
     height: 3rem;
     width: max-content;
-
     margin-bottom: 20px;
     font-size: 18px;
     justify-self: center;
@@ -112,6 +112,7 @@ color :blue;
     position:absolute; 
     top:0; 
     right:0;
+    z-index: 800;
     }
 
   .margin-top{
@@ -137,12 +138,11 @@ color :blue;
 }
 
 .container{
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
   height: 90%;
   margin-top: 8%;
-  padding-bottom: 10px;
-  padding-left:  30px;
+  padding: 10px;
   bottom: 0; 
 }
 
@@ -165,9 +165,16 @@ color :blue;
 
 .alignleft {
 	float: left;
+  padding: 20px;
   
 }
 
 .alignright {
-	float: right;
+  padding: 20px;
+}
+
+.center{
+
+  margin-left:  600px;;
+
 }
