@@ -48,14 +48,10 @@ const AddSolution = () => {
             <Form.Group className="explaination" controlId="formControlTextarea">
                 <Form.Label>Share your answer and explaination</Form.Label>
                 <Form.Control as="textarea" rows={3} onChange={(e) => setExplaination(e.target.value)}/>
-            </Form.Group>
-
-            
-    
-            
-                <Button className="radius button-color " variant="primary" type="submit">
-                    Submit
-                </Button>
+            </Form.Group>        
+            <Button className="radius button-color add" variant="primary" type="submit">
+                Submit
+            </Button>
             </Form>
         
         </div> 

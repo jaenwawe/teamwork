@@ -17,18 +17,20 @@ const {challenge_id} = useParams()
 
 
 const mapSolutions = () => {    
-    return solutionArr.map((solution) => {
-      return (
-      (solution.challenge_id == challenge_id 
-        ?  <Solution key={solution.id} solution={solution}/> 
-        : <></>)
-      )
-    })
-  };
-  return (
-    <div className="list-container">
+  return solutionArr.map((solution) => {
+    return (
+    ( solution.challenge_id == challenge_id && ((solution.explaination || solution.hints || solution.questions))
+      ?  <Solution key={solution.id} solution={solution}/> 
+      : <></>)
+    )
+  })
+};
 
-      <div className="container">{mapSolutions()}</div>
+
+  return (
+    <div className="main">
+
+      <div className="container ">{mapSolutions()}</div>
       <button onClick={() => history.push(`/newSolution/${challenge_id}`)} className="button-middle"> Add a solution </button>
     </div>
   );
