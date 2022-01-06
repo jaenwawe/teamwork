@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 2021_12_21_065831) do
   create_table "solutions", force: :cascade do |t|
     t.integer "user_id"
     t.integer "challenge_id"
-  
     t.string "explaination"
     t.string "hints"
     t.string "questions"
